@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  /* ===== Canvas Blob Animation ===== */
+  /* ===== Canvas Blob Background ===== */
   (function initCanvas() {
     var canvas = document.getElementById('heroCanvas');
     if (!canvas) return;
@@ -22,34 +22,26 @@
     function createBlobs() {
       blobs = [];
       var count = Math.min(5, Math.floor(w / 300) + 2);
-      var colors = isDark
-        ? [
-            { r: 6, g: 182, b: 212 },
-            { r: 59, g: 130, b: 246 },
-            { r: 139, g: 92, b: 246 },
-            { r: 6, g: 182, b: 212 },
-            { r: 16, g: 185, b: 129 }
-          ]
-        : [
-            { r: 6, g: 182, b: 212 },
-            { r: 59, g: 130, b: 246 },
-            { r: 139, g: 92, b: 246 },
-            { r: 6, g: 182, b: 212 },
-            { r: 16, g: 185, b: 129 }
-          ];
+      var alpha = isDark ? 0.1 : 0.07;
+      var colors = [
+        { r: 6, g: 182, b: 212 },
+        { r: 59, g: 130, b: 246 },
+        { r: 139, g: 92, b: 246 },
+        { r: 6, g: 182, b: 212 },
+        { r: 16, g: 185, b: 129 }
+      ];
 
       for (var i = 0; i < count; i++) {
-        var color = colors[i % colors.length];
+        var c = colors[i % colors.length];
         blobs.push({
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
-          radius: 120 + Math.random() * 180,
-          targetRadius: 120 + Math.random() * 180,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+          radius: 140 + Math.random() * 200,
           phase: Math.random() * Math.PI * 2,
-          color: color,
-          alpha: isDark ? 0.08 : 0.06
+          color: c,
+          alpha: alpha
         });
       }
     }
@@ -58,7 +50,7 @@
       if (!isVisible) return;
       ctx.clearRect(0, 0, w, h);
 
-      var time = Date.now() / 3000;
+      var time = Date.now() / 4000;
 
       for (var i = 0; i < blobs.length; i++) {
         var b = blobs[i];
@@ -71,21 +63,21 @@
         if (b.y < -200) b.y = h + 200;
         if (b.y > h + 200) b.y = -200;
 
-        var pulse = Math.sin(time + b.phase) * 0.15 + 1;
+        var pulse = Math.sin(time + b.phase) * 0.12 + 1;
         var r = b.radius * pulse;
 
         var dx = mouseX - b.x;
         var dy = mouseY - b.y;
         var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 400) {
-          var force = (1 - dist / 400) * 20;
-          b.x -= dx / dist * force;
-          b.y -= dy / dist * force;
+        if (dist < 350) {
+          var force = (1 - dist / 350) * 15;
+          b.x -= (dx / dist) * force;
+          b.y -= (dy / dist) * force;
         }
 
         var grad = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, r);
         grad.addColorStop(0, 'rgba(' + b.color.r + ',' + b.color.g + ',' + b.color.b + ',' + b.alpha + ')');
-        grad.addColorStop(0.5, 'rgba(' + b.color.r + ',' + b.color.g + ',' + b.color.b + ',' + (b.alpha * 0.6) + ')');
+        grad.addColorStop(0.4, 'rgba(' + b.color.r + ',' + b.color.g + ',' + b.color.b + ',' + (b.alpha * 0.5) + ')');
         grad.addColorStop(1, 'rgba(' + b.color.r + ',' + b.color.g + ',' + b.color.b + ',0)');
 
         ctx.beginPath();
@@ -121,10 +113,160 @@
 
     init();
 
-    /* Re-init on theme change */
     var themeObserver = new MutationObserver(function () {
       isDark = document.documentElement.getAttribute('data-theme') === 'dark';
       createBlobs();
+    });
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  })();
+
+  /* ===== Three.js 3D Scene ===== */
+  (function initThree() {
+    var container = document.getElementById('threeContainer');
+    if (!container || typeof THREE === 'undefined') return;
+
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    var mouseX = 0, mouseY = 0;
+    var targetRotX = 0, targetRotY = 0;
+
+    var w = container.clientWidth;
+    var h = container.clientHeight;
+
+    var scene = new THREE.Scene();
+
+    var camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+    camera.position.z = 5;
+
+    var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(w, h);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
+    container.appendChild(renderer.domElement);
+
+    /* Torus Knot (glass) */
+    var geo = new THREE.TorusKnotGeometry(1.2, 0.4, 180, 24);
+    var mat = new THREE.MeshPhysicalMaterial({
+      color: isDark ? 0x22d3ee : 0x06b6d4,
+      metalness: 0.05,
+      roughness: 0.05,
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.15,
+      transparent: true,
+      opacity: 0.75,
+      envMapIntensity: 1.5,
+      side: THREE.DoubleSide,
+      wireframe: false
+    });
+    var mesh = new THREE.Mesh(geo, mat);
+    scene.add(mesh);
+
+    /* Wireframe overlay */
+    var wireMat = new THREE.MeshPhysicalMaterial({
+      color: isDark ? 0x67e8f9 : 0x22d3ee,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.12
+    });
+    var wireMesh = new THREE.Mesh(geo.clone(), wireMat);
+    wireMesh.scale.set(1.01, 1.01, 1.01);
+    scene.add(wireMesh);
+
+    /* Particles */
+    var particleCount = 400;
+    var positions = new Float32Array(particleCount * 3);
+    var sizes = new Float32Array(particleCount);
+
+    for (var i = 0; i < particleCount; i++) {
+      var theta = Math.random() * Math.PI * 2;
+      var phi = Math.acos(2 * Math.random() - 1);
+      var radius = 3 + Math.random() * 4;
+      positions[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+      positions[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+      positions[i * 3 + 2] = radius * Math.cos(phi);
+      sizes[i] = 0.02 + Math.random() * 0.04;
+    }
+
+    var particleGeo = new THREE.BufferGeometry();
+    particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particleGeo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+
+    var particleMat = new THREE.PointsMaterial({
+      color: isDark ? 0x67e8f9 : 0x06b6d4,
+      size: 0.04,
+      transparent: true,
+      opacity: isDark ? 0.4 : 0.3,
+      blending: THREE.AdditiveBlending,
+      sizeAttenuation: true
+    });
+    var particles = new THREE.Points(particleGeo, particleMat);
+    scene.add(particles);
+
+    /* Lights */
+    var ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    var light1 = new THREE.DirectionalLight(0x06b6d4, 2);
+    light1.position.set(2, 3, 4);
+    scene.add(light1);
+
+    var light2 = new THREE.DirectionalLight(0x3b82f6, 1.5);
+    light2.position.set(-3, -1, 2);
+    scene.add(light2);
+
+    var light3 = new THREE.PointLight(0x8b5cf6, 1);
+    light3.position.set(0, -3, 2);
+    scene.add(light3);
+
+    /* Animation */
+    function animate() {
+      requestAnimationFrame(animate);
+
+      var time = Date.now() * 0.0004;
+
+      mesh.rotation.x = time * 0.3 + targetRotX * 0.001;
+      mesh.rotation.y = time * 0.5 + targetRotY * 0.001;
+      wireMesh.rotation.x = mesh.rotation.x;
+      wireMesh.rotation.y = mesh.rotation.y;
+
+      particles.rotation.x = time * 0.05;
+      particles.rotation.y = time * 0.08;
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    /* Mouse tracking */
+    container.addEventListener('mousemove', function (e) {
+      var rect = container.getBoundingClientRect();
+      targetRotX = (e.clientY - rect.top - rect.height / 2) * 1.5;
+      targetRotY = (e.clientX - rect.left - rect.width / 2) * 1.5;
+    });
+
+    container.addEventListener('mouseleave', function () {
+      targetRotX = 0;
+      targetRotY = 0;
+    });
+
+    /* Resize */
+    function onResize() {
+      var cw = container.clientWidth;
+      var ch = container.clientHeight;
+      if (cw === 0 || ch === 0) return;
+      camera.aspect = cw / ch;
+      camera.updateProjectionMatrix();
+      renderer.setSize(cw, ch);
+    }
+
+    window.addEventListener('resize', onResize);
+
+    /* Theme change */
+    var themeObserver = new MutationObserver(function () {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      mat.color.setHex(dark ? 0x22d3ee : 0x06b6d4);
+      wireMat.color.setHex(dark ? 0x67e8f9 : 0x22d3ee);
+      particleMat.color.setHex(dark ? 0x67e8f9 : 0x06b6d4);
     });
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   })();
@@ -202,7 +344,7 @@
     });
   }
 
-  /* ===== Legal Modals ===== */
+  /* ===== Modals ===== */
   var modalTriggers = document.querySelectorAll('[data-modal]');
   var modalCloseBtns = document.querySelectorAll('[data-modal-close]');
 

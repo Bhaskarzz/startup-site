@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional websites for Indian small businesses. Affordable, customizable templates with no coding required.">
+  <meta name="description" content="Professional websites for Indian small businesses. Affordable, customizable templates.">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -12,7 +12,7 @@
     content="default-src 'self';
       style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
       font-src 'self' https://fonts.gstatic.com;
-      script-src 'self' 'unsafe-inline';
+      script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline';
       media-src 'self';
       img-src 'self' data:;
       connect-src 'none';
@@ -26,12 +26,11 @@
 </head>
 <body>
 
-  <!-- Nav -->
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">web<span>forge</span></a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#templates">Templates</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -45,63 +44,59 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
+      <a href="#home">Home</a>
       <a href="#templates">Templates</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero" id="home">
     <canvas id="heroCanvas"></canvas>
     <div class="hero-glow"></div>
-    <div class="floating-elements">
-      <div class="float-shape float-shape-1"></div>
-      <div class="float-shape float-shape-2"></div>
-      <div class="float-shape float-shape-3"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-glass">
+    <div class="container hero-inner">
+      <div class="hero-left">
         <div class="hero-badge fade-up">
           <span class="hero-badge-dot"></span>
           For Indian small businesses
         </div>
-        <h1 class="fade-up" style="animation-delay:0.1s">
+        <h1 class="fade-up" style="animation-delay:0.08s">
           Websites that work<br>
-          for your business
+          <span class="gradient-text">for your business</span>
         </h1>
-        <p class="fade-up" style="animation-delay:0.2s">
-          Professional, affordable website templates designed for Indian small businesses.
-          No coding, no complexity. Just a clean site that helps you grow.
+        <p class="fade-up" style="animation-delay:0.16s">
+          Professional templates designed for Indian small businesses.
+          Pick one, tell us your brand, and we handle the rest.
         </p>
-        <div class="hero-actions fade-up" style="animation-delay:0.3s">
+        <div class="hero-actions fade-up" style="animation-delay:0.24s">
           <a href="#templates" class="btn btn-primary">
             Browse templates
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <a href="#contact" class="btn btn-secondary">
-            Get in touch
+            Talk to us
           </a>
         </div>
-        <div class="hero-stats fade-up" style="animation-delay:0.4s">
-          <div class="hero-stat">
+        <div class="hero-stats fade-up" style="animation-delay:0.32s">
+          <div>
             <div class="hero-stat-number">4</div>
             <div class="hero-stat-label">Templates</div>
           </div>
-          <div class="hero-stat">
+          <div>
             <div class="hero-stat-number">Free</div>
             <div class="hero-stat-label">To inquire</div>
           </div>
-          <div class="hero-stat">
+          <div>
             <div class="hero-stat-number">100%</div>
             <div class="hero-stat-label">Customizable</div>
           </div>
         </div>
       </div>
+      <div class="hero-right fade-up" style="animation-delay:0.16s">
+        <div id="threeContainer"></div>
+      </div>
     </div>
   </section>
 
-  <!-- Templates -->
   <section class="section" id="templates">
     <div class="container">
       <div class="section-header reveal">
@@ -111,102 +106,93 @@
       </div>
       <div class="templates-grid">
         <div class="template-card reveal" style="animation-delay:0.1s">
-          <div class="template-card-inner">
-            <div class="template-preview template-preview-bg1">
-              <div class="template-sheen"></div>
-              <div class="template-preview-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.334a2 2 0 0 0 1.994 0L20.7 7"/></svg>
-              </div>
+          <div class="template-preview template-preview-bg1">
+            <div class="template-sheen"></div>
+            <div class="template-preview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.334a2 2 0 0 0 1.994 0L20.7 7"/></svg>
             </div>
-            <div class="template-info">
-              <div class="template-name">Vyapaar</div>
-              <div class="template-desc">A clean, professional theme for retail businesses, shops, and local stores. Product showcase and contact-focused layout.</div>
-              <div class="template-tags">
-                <span class="template-tag">Business</span>
-                <span class="template-tag">Retail</span>
-                <span class="template-tag">Single page</span>
-              </div>
-              <a href="https://wa.me/917088411468" target="_blank" rel="noopener" class="template-action">
-                Inquire
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+          </div>
+          <div class="template-info">
+            <div class="template-name">Vyapaar</div>
+            <div class="template-desc">A clean, professional theme for retail businesses, shops, and local stores. Product showcase and contact-focused layout.</div>
+            <div class="template-tags">
+              <span class="template-tag">Business</span>
+              <span class="template-tag">Retail</span>
+              <span class="template-tag">Single page</span>
             </div>
+            <a href="https://wa.me/917088411468" target="_blank" rel="noopener" class="template-action">
+              Inquire
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
         <div class="template-card reveal" style="animation-delay:0.2s">
-          <div class="template-card-inner">
-            <div class="template-preview template-preview-bg2">
-              <div class="template-sheen"></div>
-              <div class="template-preview-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
+          <div class="template-preview template-preview-bg2">
+            <div class="template-sheen"></div>
+            <div class="template-preview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <div class="template-info">
-              <div class="template-name">Udyog</div>
-              <div class="template-desc">Built for manufacturing, industrial, and B2B companies. Services showcase, client portfolio, and trust signals.</div>
-              <div class="template-tags">
-                <span class="template-tag">Industrial</span>
-                <span class="template-tag">B2B</span>
-                <span class="template-tag">Services</span>
-              </div>
-              <a href="https://wa.me/917088411468" target="_blank" rel="noopener" class="template-action">
-                Inquire
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+          </div>
+          <div class="template-info">
+            <div class="template-name">Udyog</div>
+            <div class="template-desc">Built for manufacturing, industrial, and B2B companies. Services showcase, client portfolio, and trust signals.</div>
+            <div class="template-tags">
+              <span class="template-tag">Industrial</span>
+              <span class="template-tag">B2B</span>
+              <span class="template-tag">Services</span>
             </div>
+            <a href="https://wa.me/917088411468" target="_blank" rel="noopener" class="template-action">
+              Inquire
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
         <div class="template-card reveal" style="animation-delay:0.3s">
-          <div class="template-card-inner">
-            <div class="template-preview template-preview-bg3">
-              <div class="template-sheen"></div>
-              <div class="template-preview-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </div>
+          <div class="template-preview template-preview-bg3">
+            <div class="template-sheen"></div>
+            <div class="template-preview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
-            <div class="template-info">
-              <div class="template-name">Saarthi</div>
-              <div class="template-desc">Designed for consultants, coaches, and agencies. Lead generation, testimonials, and portfolio focused.</div>
-              <div class="template-tags">
-                <span class="template-tag">Services</span>
-                <span class="template-tag">Consulting</span>
-                <span class="template-tag">Portfolio</span>
-              </div>
-              <a href="https://wa.me/917088411468" target="_blank" rel="noopener" class="template-action">
-                Inquire
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+          </div>
+          <div class="template-info">
+            <div class="template-name">Saarthi</div>
+            <div class="template-desc">Designed for consultants, coaches, and agencies. Lead generation, testimonials, and portfolio focused.</div>
+            <div class="template-tags">
+              <span class="template-tag">Services</span>
+              <span class="template-tag">Consulting</span>
+              <span class="template-tag">Portfolio</span>
             </div>
+            <a href="https://wa.me/917088411468" target="_blank" rel="noopener" class="template-action">
+              Inquire
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
         <div class="template-card reveal" style="animation-delay:0.4s">
-          <div class="template-card-inner">
-            <div class="template-preview template-preview-bg4">
-              <div class="template-sheen"></div>
-              <div class="template-preview-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 7h-15"/><path d="M19.5 7v9"/><path d="M4.5 7v9"/><path d="M4.5 16a2.5 2.5 0 0 0 5 0"/><path d="M14.5 16a2.5 2.5 0 0 0 5 0"/><path d="M12 2v5"/><path d="m8 9 4-4 4 4"/></svg>
-              </div>
+          <div class="template-preview template-preview-bg4">
+            <div class="template-sheen"></div>
+            <div class="template-preview-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 7h-15"/><path d="M19.5 7v9"/><path d="M4.5 7v9"/><path d="M4.5 16a2.5 2.5 0 0 0 5 0"/><path d="M14.5 16a2.5 2.5 0 0 0 5 0"/><path d="M12 2v5"/><path d="m8 9 4-4 4 4"/></svg>
             </div>
-            <div class="template-info">
-              <div class="template-name">Craft</div>
-              <div class="template-desc">A creative portfolio theme for artists, photographers, designers, and makers. Visual storytelling first.</div>
-              <div class="template-tags">
-                <span class="template-tag">Portfolio</span>
-                <span class="template-tag">Creative</span>
-                <span class="template-tag">Gallery</span>
-              </div>
-              <a href="https://wa.me/917088411468" target="_blank" rel="noopener" class="template-action">
-                Inquire
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+          </div>
+          <div class="template-info">
+            <div class="template-name">Craft</div>
+            <div class="template-desc">A creative portfolio theme for artists, photographers, designers, and makers. Visual storytelling first.</div>
+            <div class="template-tags">
+              <span class="template-tag">Portfolio</span>
+              <span class="template-tag">Creative</span>
+              <span class="template-tag">Gallery</span>
             </div>
+            <a href="https://wa.me/917088411468" target="_blank" rel="noopener" class="template-action">
+              Inquire
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
@@ -240,7 +226,6 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-section reveal" id="contact">
     <div class="container">
       <h2 class="cta-title">Ready to get online?</h2>
@@ -252,7 +237,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -286,7 +270,6 @@
     </div>
   </footer>
 
-  <!-- Modals -->
   <div class="modal-overlay" id="termsModal">
     <div class="modal">
       <button class="modal-close" data-modal-close="termsModal">
@@ -338,6 +321,7 @@
     <span id="musicLabel">Music</span>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
