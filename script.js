@@ -11,6 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks) {
+    const sections = document.querySelectorAll('section[id]');
+    const links = navLinks.querySelectorAll('a[href^="#"]');
+    if (sections.length && links.length) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            const match = navLinks.querySelector(`a[href="#${entry.target.id}"]`);
+            if (match) match.classList.add('active');
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '-80px 0px -30% 0px' });
+      sections.forEach(s => obs.observe(s));
+    }
+  }
+
   // ====== THEME ======
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
@@ -34,32 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ====== MUSIC ======
-  const musicToggle = document.getElementById('musicToggle');
-  const bgMusic = document.getElementById('bgMusic');
-  if (musicToggle && bgMusic) {
-    const musicOn = musicToggle.querySelector('.icon-music-on');
-    const musicOff = musicToggle.querySelector('.icon-music-off');
-    let playing = false;
 
-    if (localStorage.getItem('musicPlaying') === 'true') {
-      bgMusic.play().then(() => { playing = true; updateMusic(true); }).catch(() => {});
-    }
-
-    musicToggle.addEventListener('click', () => {
-      if (playing) {
-        bgMusic.pause(); playing = false; updateMusic(false);
-        localStorage.setItem('musicPlaying', 'false');
-      } else {
-        bgMusic.play().then(() => { playing = true; updateMusic(true); localStorage.setItem('musicPlaying', 'true'); }).catch(() => {});
-      }
-    });
-
-    function updateMusic(p) {
-      if (p) { musicOn.style.display = 'none'; musicOff.style.display = 'block'; musicToggle.classList.add('playing'); }
-      else { musicOn.style.display = 'block'; musicOff.style.display = 'none'; musicToggle.classList.remove('playing'); }
-    }
-  }
 
   // ====== MOBILE MENU ======
   const mobileBtn = document.getElementById('mobileBtn');

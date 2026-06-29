@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const staggerGrids = document.querySelectorAll('.reviews-grid');
+  const staggerGrids = document.querySelectorAll('.reviews-grid, .restaurant-gallery, .menu-grid');
   staggerGrids.forEach(grid => {
     Array.from(grid.children).forEach((child, i) => {
       child.setAttribute('data-reveal', '');

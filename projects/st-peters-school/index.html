@@ -27,20 +27,28 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         +91 11 2345 6789
       </span>
+      <span class="topbar-item topbar-action">
+        <a href="https://wa.me/917088411468">Admission Enquiry</a>
+      </span>
+      <span class="topbar-item topbar-action">
+        <a href="#">Online Fee Payment</a>
+      </span>
     </div>
   </header>
 
   <nav class="nav" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <svg viewBox="0 0 32 32" width="28" height="28" fill="none"><rect width="32" height="32" rx="8" fill="url(#lg)" opacity="0.12"/><path d="M16 4L4 12v16h10V20h4v8h10V12L16 4z" stroke="url(#lg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <img src="images/logo.png" alt="School Logo" onerror="this.style.display='none'" style="width:32px;height:32px;border-radius:8px">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" class="logo-fallback"><rect width="32" height="32" rx="8" fill="url(#lg)" opacity="0.12"/><path d="M16 4L4 12v16h10V20h4v8h10V12L16 4z" stroke="url(#lg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span class="logo-text">St. Peter's</span>
       </a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#academics">Academics</a>
+        <a href="#facilities">Facilities</a>
         <a href="#admissions">Admissions</a>
-        <a href="#campus">Campus</a>
+        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-actions">
@@ -53,53 +61,60 @@
   </nav>
 
   <main>
-    <section class="hero school-hero">
-      <div class="hero-bg">
-        <div class="hero-shape hero-shape-1" style="background:rgba(6,182,212,0.06)"></div>
-        <div class="hero-shape hero-shape-2" style="background:rgba(59,130,246,0.05)"></div>
-      </div>
-      <div class="hero-content" data-reveal style="max-width:800px">
-        <span class="hero-badge">Est. 1998</span>
-        <h1 class="hero-title" style="font-size:clamp(36px,6vw,72px)">
-          Shaping Tomorrow's<br/>
-          <span style="background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Leaders Today</span>
-        </h1>
-        <p class="hero-subtitle" style="max-width:600px">
-          From nursery to grade 12 — a world-class education in a nurturing environment.
-          Admissions open for the 2026-27 academic year.
-        </p>
+    <section class="hero school-hero" id="hero">
+      <div class="hero-bg-img" style="background-image:url('images/hero.jpg')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content" data-reveal>
+        <span class="hero-badge">Est. 1998 — CBSE Affiliated</span>
+        <h1 class="hero-title">Shaping Tomorrow's<br/><span>Leaders Today</span></h1>
+        <p class="hero-subtitle">From nursery to grade 12 — a world-class education in a nurturing environment. Admissions open for 2026-27.</p>
         <div class="hero-actions">
-          <a href="#admissions" class="btn btn-primary">Apply Now</a>
-          <a href="#about" class="btn btn-outline">Explore School</a>
+          <a href="https://wa.me/917088411468" class="btn btn-primary">Apply Now</a>
+          <a href="tel:+911123456789" class="btn btn-outline">Call School</a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">25+</span><span class="stat-label">Years</span></div>
+          <div class="stat"><span class="stat-num">25+</span><span class="stat-label">Years of Excellence</span></div>
           <div class="stat"><span class="stat-num">1200+</span><span class="stat-label">Students</span></div>
-          <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Pass Rate</span></div>
-          <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Teachers</span></div>
+          <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Board Pass Rate</span></div>
+          <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Qualified Teachers</span></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="about">
       <div class="section-header" data-reveal>
-        <span class="section-badge">About</span>
+        <span class="section-badge">About Us</span>
         <h2 class="section-title">A school with a soul.</h2>
         <p class="section-desc">For over 25 years, St. Peter's has been nurturing young minds with a perfect blend of academics, sports, and values.</p>
       </div>
-      <div class="about-features" data-reveal>
+      <div class="about-grid" data-reveal>
+        <div class="about-text">
+          <p>At St. Peter's International School, we believe in holistic education that goes beyond textbooks. Our mission is to nurture each child's intellectual, emotional, and social development in a safe, supportive environment.</p>
+          <p>With a student-teacher ratio of 25:1, smart classrooms, and a 10-acre green campus, we provide everything your child needs to thrive. Our CBSE curriculum is complemented by co-curricular activities, sports, and life skills training.</p>
+          <div class="about-motto">
+            <div class="motto-item"><span class="motto-icon">R</span><div><strong>Respect</strong><small>For self, others, and the world</small></div></div>
+            <div class="motto-item"><span class="motto-icon">R</span><div><strong>Resilience</strong><small>To face challenges with courage</small></div></div>
+            <div class="motto-item"><span class="motto-icon">R</span><div><strong>Radiance</strong><small>To shine with confidence and joy</small></div></div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="images/students.jpg" alt="Students" onerror="this.style.display='none'">
+          <div class="about-image-placeholder" style="background:linear-gradient(135deg,var(--accent),var(--accent-2));opacity:0.1;border-radius:var(--r-lg);width:100%;height:100%;min-height:300px"></div>
+        </div>
+      </div>
+      <div class="about-features">
         <div class="about-feat glass">
-          <div class="about-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div class="about-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
           <h3>Academic Excellence</h3>
           <p>CBSE curriculum with 98% board pass rate. Smart classrooms and experienced faculty.</p>
         </div>
         <div class="about-feat glass">
-          <div class="about-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"/></svg></div>
+          <div class="about-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"/></svg></div>
           <h3>Expert Faculty</h3>
           <p>40+ qualified teachers dedicated to personalized attention for every student.</p>
         </div>
         <div class="about-feat glass">
-          <div class="about-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="about-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3>Safe &amp; Secure</h3>
           <p>24/7 CCTV surveillance, GPS-tracked transport, and trained security staff.</p>
         </div>
@@ -116,31 +131,65 @@
         <div class="program-card glass" data-tilt data-tilt-max="4">
           <div class="program-stage">Nursery - KG</div>
           <h3>Early Years</h3>
-          <p>Play-based learning with focus on social skills, creativity, and foundational literacy. Montessori-inspired approach.</p>
+          <p>Play-based learning with focus on social skills, creativity, and foundational literacy.</p>
           <div class="program-ages">Ages 3 - 5</div>
         </div>
         <div class="program-card glass" data-tilt data-tilt-max="4">
           <div class="program-stage">Grades 1 - 5</div>
           <h3>Primary School</h3>
-          <p>Strong foundation in Math, Science, English, and Languages. Emphasis on critical thinking and project-based learning.</p>
+          <p>Strong foundation in Math, Science, English, and Languages. Project-based learning.</p>
           <div class="program-ages">Ages 6 - 10</div>
         </div>
         <div class="program-card glass" data-tilt data-tilt-max="4">
           <div class="program-stage">Grades 6 - 10</div>
           <h3>Middle &amp; Secondary</h3>
-          <p>CBSE curriculum with subject choices, lab work, coding clubs, and career guidance counseling.</p>
+          <p>CBSE curriculum with subject choices, lab work, coding clubs, and career guidance.</p>
           <div class="program-ages">Ages 11 - 15</div>
         </div>
         <div class="program-card glass" data-tilt data-tilt-max="4">
           <div class="program-stage">Grades 11 - 12</div>
           <h3>Senior Secondary</h3>
-          <p>Science, Commerce, and Humanities streams. Board exam prep, mock tests, and college counseling.</p>
+          <p>Science, Commerce, Humanities streams. Board exam prep and college counseling.</p>
           <div class="program-ages">Ages 16 - 18</div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="admissions">
+    <section class="section" id="facilities">
+      <div class="section-header" data-reveal>
+        <span class="section-badge">Facilities</span>
+        <h2 class="section-title">Our campus.</h2>
+        <p class="section-desc">A 10-acre campus with world-class facilities for holistic development.</p>
+      </div>
+      <div class="facilities-grid">
+        <div class="facility-card" data-reveal>
+          <div class="facility-img"><img src="images/classroom.jpg" alt="Smart Classrooms" onerror="this.style.display='none'"><div class="facility-placeholder" style="background:linear-gradient(135deg,#06b6d4,#2563eb)"></div></div>
+          <div class="facility-info"><h3>Smart Classrooms</h3><p>25+ digital classrooms with interactive boards and AV systems.</p></div>
+        </div>
+        <div class="facility-card" data-reveal>
+          <div class="facility-img"><img src="images/sports.jpg" alt="Sports Complex" onerror="this.style.display='none'"><div class="facility-placeholder" style="background:linear-gradient(135deg,#10b981,#059669)"></div></div>
+          <div class="facility-info"><h3>Sports Complex</h3><p>Football ground, basketball court, swimming pool, and athletics track.</p></div>
+        </div>
+        <div class="facility-card" data-reveal>
+          <div class="facility-img"><img src="images/lab.jpg" alt="Science Labs" onerror="this.style.display='none'"><div class="facility-placeholder" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)"></div></div>
+          <div class="facility-info"><h3>Science Labs</h3><p>Fully equipped Physics, Chemistry, Biology, and Computer labs.</p></div>
+        </div>
+        <div class="facility-card" data-reveal>
+          <div class="facility-img"><img src="images/library.jpg" alt="Library" onerror="this.style.display='none'"><div class="facility-placeholder" style="background:linear-gradient(135deg,#f59e0b,#d97706)"></div></div>
+          <div class="facility-info"><h3>Library</h3><p>8000+ books, digital research portal, and quiet study areas.</p></div>
+        </div>
+        <div class="facility-card" data-reveal>
+          <div class="facility-img"><img src="images/auditorium.jpg" alt="Auditorium" onerror="this.style.display='none'"><div class="facility-placeholder" style="background:linear-gradient(135deg,#ec4899,#db2777)"></div></div>
+          <div class="facility-info"><h3>Auditorium</h3><p>Modern auditorium for assemblies, events, and cultural programs.</p></div>
+        </div>
+        <div class="facility-card" data-reveal>
+          <div class="facility-img"><img src="images/students.jpg" alt="Student Life" onerror="this.style.display='none'"><div class="facility-placeholder" style="background:linear-gradient(135deg,#14b8a6,#0d9488)"></div></div>
+          <div class="facility-info"><h3>Student Life</h3><p>Clubs, competitions, field trips, and leadership programs for all.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="admissions">
       <div class="section-header" data-reveal>
         <span class="section-badge">Admissions</span>
         <h2 class="section-title">Join the St. Peter's family.</h2>
@@ -150,22 +199,22 @@
         <div class="admission-step glass" data-reveal>
           <div class="admission-num">01</div>
           <h3>Submit Enquiry</h3>
-          <p>Fill the form or WhatsApp us. We'll call you within 24 hours to discuss your child's needs.</p>
+          <p>Fill the form or WhatsApp us. We'll call you within 24 hours.</p>
         </div>
         <div class="admission-step glass" data-reveal>
           <div class="admission-num">02</div>
           <h3>Campus Visit</h3>
-          <p>Tour our facilities, meet the teachers, and see the learning environment firsthand.</p>
+          <p>Tour our facilities, meet teachers, and see the learning environment.</p>
         </div>
         <div class="admission-step glass" data-reveal>
           <div class="admission-num">03</div>
           <h3>Assessment</h3>
-          <p>Age-appropriate interaction to understand your child's strengths and readiness.</p>
+          <p>Age-appropriate interaction to understand your child's strengths.</p>
         </div>
         <div class="admission-step glass" data-reveal>
           <div class="admission-num">04</div>
           <h3>Enrolment</h3>
-          <p>Complete documentation and secure your child's seat. Welcome to St. Peter's!</p>
+          <p>Complete documentation and secure your child's seat.</p>
         </div>
       </div>
       <div class="admissions-cta" data-reveal>
@@ -174,33 +223,19 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="campus">
+    <section class="section" id="gallery">
       <div class="section-header" data-reveal>
-        <span class="section-badge">Campus</span>
-        <h2 class="section-title">Take a look around.</h2>
-        <p class="section-desc">A 10-acre campus designed for learning, play, and growth.</p>
+        <span class="section-badge">Gallery</span>
+        <h2 class="section-title">Life at St. Peter's.</h2>
+        <p class="section-desc">Moments that capture the spirit of our school.</p>
       </div>
-      <div class="campus-grid">
-        <div class="campus-item glass">
-          <div class="campus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6V2"/><path d="M6 18v4"/><path d="M18 18v4"/></svg></div>
-          <h3>Smart Classrooms</h3>
-          <p>25+ digital classrooms with interactive boards, projectors, and AV systems.</p>
-        </div>
-        <div class="campus-item glass">
-          <div class="campus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <h3>Sports Complex</h3>
-          <p>Football ground, basketball court, indoor badminton, swimming pool, and athletics track.</p>
-        </div>
-        <div class="campus-item glass">
-          <div class="campus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-          <h3>Library</h3>
-          <p>8000+ books, digital research portal, reading corners, and quiet study areas.</p>
-        </div>
-        <div class="campus-item glass">
-          <div class="campus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 22V8l7-5 5 3 5-3 5 3v14"/><path d="M2 22h20"/><path d="M7 13h4v4H7z"/><path d="M13 13h4v4h-4z"/></svg></div>
-          <h3>Science Labs</h3>
-          <p>Fully equipped Physics, Chemistry, Biology, and Computer Science laboratories.</p>
-        </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/classroom.jpg" alt="Classroom" onerror="this.style.display='none'"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#06b6d4,#2563eb)"></div></div>
+        <div class="gallery-item"><img src="images/sports.jpg" alt="Sports" onerror="this.style.display='none'"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#10b981,#059669)"></div></div>
+        <div class="gallery-item"><img src="images/lab.jpg" alt="Lab" onerror="this.style.display='none'"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)"></div></div>
+        <div class="gallery-item"><img src="images/students.jpg" alt="Students" onerror="this.style.display='none'"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#14b8a6,#0d9488)"></div></div>
+        <div class="gallery-item"><img src="images/library.jpg" alt="Library" onerror="this.style.display='none'"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#f59e0b,#d97706)"></div></div>
+        <div class="gallery-item"><img src="images/auditorium.jpg" alt="Auditorium" onerror="this.style.display='none'"><div class="gallery-placeholder" style="background:linear-gradient(135deg,#ec4899,#db2777)"></div></div>
       </div>
     </section>
 
@@ -212,7 +247,7 @@
           <a href="https://wa.me/917088411468" class="btn btn-primary">WhatsApp Us</a>
           <a href="mailto:admissions@stpeters.edu.in" class="btn btn-outline">Send Email</a>
         </div>
-        <p style="margin-top:16px;font-size:12px;color:var(--text-muted)">Near City Centre, Model Town, Delhi — Open Mon-Sat, 8AM-2PM</p>
+        <p class="cta-info">Near City Centre, Model Town, Delhi — Open Mon-Sat, 8AM-2PM</p>
       </div>
     </section>
   </main>
@@ -226,35 +261,44 @@
             <span>St. Peter's</span>
           </a>
           <p>Excellence in education since 1998. Affiliated to CBSE, New Delhi.</p>
+          <div class="footer-contact">
+            <span>Near City Centre, Model Town, Delhi</span>
+            <span>+91 11 2345 6789</span>
+            <span>admissions@stpeters.edu.in</span>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
           <a href="#about">About Us</a>
           <a href="#academics">Academics</a>
+          <a href="#facilities">Facilities</a>
           <a href="#admissions">Admissions</a>
-          <a href="#campus">Campus</a>
+          <a href="#gallery">Gallery</a>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="https://wa.me/917088411468">WhatsApp</a>
-          <a href="mailto:admissions@stpeters.edu.in">Email</a>
+          <h4>For Parents</h4>
+          <a href="https://wa.me/917088411468">WhatsApp Enquiry</a>
           <a href="tel:+911123456789">Call Us</a>
+          <a href="mailto:admissions@stpeters.edu.in">Email Us</a>
+          <a href="#">Online Fee Payment</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
-          <a href="#" class="legal-link" data-modal="terms">Terms</a>
-          <a href="#" class="legal-link" data-modal="privacy">Privacy</a>
+          <a href="#" class="legal-link" data-modal="terms">Terms of Use</a>
+          <a href="#" class="legal-link" data-modal="privacy">Privacy Policy</a>
+          <a href="#" class="legal-link" data-modal="refund">Refund Policy</a>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 St. Peter's International School. All rights reserved.</p>
-        <p style="font-size:11px;color:var(--text-muted)">Website by <a href="https://wa.me/917088411468" style="color:var(--accent)">WebForge</a></p>
+        <p class="footer-credit">Website by <a href="https://wa.me/917088411468">WebForge</a></p>
       </div>
     </div>
   </footer>
 
-  <div class="modal-overlay" id="modal-terms"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Terms of Use</h2><div class="modal-body"><p>Information on this website is for general informational purposes only. St. Peter's International School reserves the right to modify fees, policies, and academic calendar as needed.</p></div></div></div>
-  <div class="modal-overlay" id="modal-privacy"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Privacy Policy</h2><div class="modal-body"><p>Any personal information submitted via enquiry forms or WhatsApp is used solely for admissions communication. We do not share data with third parties.</p></div></div></div>
+  <div class="modal-overlay" id="modal-terms"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Terms of Use</h2><div class="modal-body"><p>Information on this website is for general informational purposes only. St. Peter's International School reserves the right to modify fees, policies, and academic calendar as needed. All content is protected by copyright.</p></div></div></div>
+  <div class="modal-overlay" id="modal-privacy"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Privacy Policy</h2><div class="modal-body"><p>Any personal information submitted via enquiry forms or WhatsApp is used solely for admissions communication. We do not share or sell data with third parties. Data is stored securely and retained only as long as necessary.</p></div></div></div>
+  <div class="modal-overlay" id="modal-refund"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Refund Policy</h2><div class="modal-body"><p>Fee refunds are governed by school policy as outlined at the time of admission. Please refer to the admission agreement for detailed terms regarding cancellation and refund eligibility.</p></div></div></div>
 
   <defs style="display:none">
     <svg><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></svg>

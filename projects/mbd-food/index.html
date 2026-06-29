@@ -22,6 +22,7 @@
       <div class="nav-links">
         <a href="#menu">Menu</a>
         <a href="#about">Our Story</a>
+        <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </div>
@@ -35,16 +36,13 @@
   </nav>
 
   <main>
-    <section class="hero food-hero">
-      <div class="hero-bg">
-        <div class="food-orb"></div>
-      </div>
+    <section class="hero food-hero" id="hero">
+      <div class="hero-bg-img" style="background-image:url('images/hero.jpg')"></div>
+      <div class="hero-overlay"></div>
       <div class="hero-content" data-reveal>
         <span class="hero-badge food-badge">Since 2015</span>
         <h1 class="hero-title food-title">Taste That<br/><span>Speaks</span></h1>
-        <p class="hero-subtitle food-sub">
-          North Indian, Mughlai, and Chinese — made fresh every day. Dine-in, takeaway, or order online.
-        </p>
+        <p class="hero-subtitle food-sub">North Indian, Mughlai, and Chinese — made fresh every day. Dine-in, takeaway, or order online.</p>
         <div class="hero-actions">
           <a href="#menu" class="btn btn-primary">View Menu</a>
           <a href="https://wa.me/917088411468" class="btn btn-outline">Order on WhatsApp</a>
@@ -75,28 +73,28 @@
 
       <div class="menu-grid" id="menuGrid">
         <div class="menu-item glass" data-category="starters">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#f59e0b,#f97316)"></div>
           <h3>Chicken Tikka</h3>
           <p class="menu-item-desc">Tender chicken marinated in yogurt &amp; spices, grilled in tandoor.</p>
           <span class="menu-item-price">Rs. 250</span>
           <div class="menu-item-tags"><span>Non-Veg</span></div>
         </div>
         <div class="menu-item glass" data-category="starters">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#10b981,#059669)"></div>
           <h3>Paneer Tikka</h3>
           <p class="menu-item-desc">Cottage cheese marinated in spices, grilled to perfection.</p>
           <span class="menu-item-price">Rs. 220</span>
           <div class="menu-item-tags"><span>Veg</span></div>
         </div>
         <div class="menu-item glass" data-category="starters">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)"></div>
           <h3>Spring Rolls</h3>
           <p class="menu-item-desc">Crispy vegetable rolls served with sweet chili sauce.</p>
           <span class="menu-item-price">Rs. 180</span>
           <div class="menu-item-tags"><span>Veg</span></div>
         </div>
         <div class="menu-item glass" data-category="starters">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#ef4444,#dc2626)"></div>
           <h3>Chicken 65</h3>
           <p class="menu-item-desc">Spicy deep-fried chicken with curry leaves &amp; South Indian spices.</p>
           <span class="menu-item-price">Rs. 280</span>
@@ -104,28 +102,28 @@
         </div>
 
         <div class="menu-item glass" data-category="main">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#f97316,#ea580c)"></div>
           <h3>Butter Chicken</h3>
-          <p class="menu-item-desc">Creamy tomato-based curry with tender chicken pieces, our signature dish.</p>
+          <p class="menu-item-desc">Creamy tomato-based curry with tender chicken, our signature dish.</p>
           <span class="menu-item-price">Rs. 350</span>
           <div class="menu-item-tags"><span>Non-Veg</span><span>Signature</span></div>
         </div>
         <div class="menu-item glass" data-category="main">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#f59e0b,#d97706)"></div>
           <h3>Dal Makhani</h3>
           <p class="menu-item-desc">Slow-cooked black lentils in rich creamy gravy, a North Indian classic.</p>
           <span class="menu-item-price">Rs. 250</span>
           <div class="menu-item-tags"><span>Veg</span><span>Popular</span></div>
         </div>
         <div class="menu-item glass" data-category="main">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#e11d48,#be123c)"></div>
           <h3>Chicken Biryani</h3>
-          <p class="menu-item-desc">Fragrant basmati layered with spiced chicken, saffron, and fried onions.</p>
+          <p class="menu-item-desc">Fragrant basmati layered with spiced chicken, saffron, fried onions.</p>
           <span class="menu-item-price">Rs. 320</span>
           <div class="menu-item-tags"><span>Non-Veg</span><span>Popular</span></div>
         </div>
         <div class="menu-item glass" data-category="main">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#22c55e,#16a34a)"></div>
           <h3>Palak Paneer</h3>
           <p class="menu-item-desc">Cottage cheese in creamy spinach gravy, mildly spiced.</p>
           <span class="menu-item-price">Rs. 240</span>
@@ -133,21 +131,21 @@
         </div>
 
         <div class="menu-item glass" data-category="breads">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12a4 4 0 0 0 8 0"/><path d="M12 12a4 4 0 0 0 8 0"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#fbbf24,#f59e0b)"></div>
           <h3>Butter Naan</h3>
           <p class="menu-item-desc">Soft tandoor-baked bread brushed with butter.</p>
           <span class="menu-item-price">Rs. 50</span>
           <div class="menu-item-tags"><span>Veg</span></div>
         </div>
         <div class="menu-item glass" data-category="breads">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12a4 4 0 0 0 8 0"/><path d="M12 12a4 4 0 0 0 8 0"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#f59e0b,#b45309)"></div>
           <h3>Garlic Naan</h3>
           <p class="menu-item-desc">Tandoor-baked naan topped with garlic and coriander.</p>
           <span class="menu-item-price">Rs. 60</span>
           <div class="menu-item-tags"><span>Veg</span></div>
         </div>
         <div class="menu-item glass" data-category="breads">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12a4 4 0 0 0 8 0"/><path d="M12 12a4 4 0 0 0 8 0"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#a16207,#854d0e)"></div>
           <h3>Roti</h3>
           <p class="menu-item-desc">Whole wheat bread baked in tandoor.</p>
           <span class="menu-item-price">Rs. 25</span>
@@ -155,14 +153,14 @@
         </div>
 
         <div class="menu-item glass" data-category="desserts">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 17a8 8 0 0 1-8-8 8 8 0 0 1 16 0 8 8 0 0 1-8 8z"/><path d="M12 17v4"/><path d="M9 21h6"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#ec4899,#db2777)"></div>
           <h3>Gulab Jamun</h3>
           <p class="menu-item-desc">Deep-fried milk dumplings soaked in rose syrup. 2 pieces.</p>
           <span class="menu-item-price">Rs. 120</span>
           <div class="menu-item-tags"><span>Veg</span><span>Popular</span></div>
         </div>
         <div class="menu-item glass" data-category="desserts">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 17a8 8 0 0 1-8-8 8 8 0 0 1 16 0 8 8 0 0 1-8 8z"/><path d="M12 17v4"/><path d="M9 21h6"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#a855f7,#9333ea)"></div>
           <h3>Kheer</h3>
           <p class="menu-item-desc">Creamy rice pudding with cardamom, saffron, and dry fruits.</p>
           <span class="menu-item-price">Rs. 150</span>
@@ -170,14 +168,14 @@
         </div>
 
         <div class="menu-item glass" data-category="beverages">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#78716c,#57534e)"></div>
           <h3>Masala Chai</h3>
           <p class="menu-item-desc">Traditional Indian spiced tea with ginger and cardamom.</p>
           <span class="menu-item-price">Rs. 40</span>
           <div class="menu-item-tags"><span>Hot</span></div>
         </div>
         <div class="menu-item glass" data-category="beverages">
-          <div class="menu-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg></div>
+          <div class="menu-item-img" style="background:linear-gradient(135deg,#fef3c7,#d9a404)"></div>
           <h3>Sweet Lassi</h3>
           <p class="menu-item-desc">Refreshing yogurt-based drink with a hint of cardamom.</p>
           <span class="menu-item-price">Rs. 80</span>
@@ -192,13 +190,33 @@
         <h2 class="section-title food-title">Built on taste.</h2>
         <p class="section-desc">What started as a small dhaba in 2015 is now a favorite spot for food lovers.</p>
       </div>
-      <div class="story-content" data-reveal>
-        <p class="story-text">MBD Food began with a simple belief — good food brings people together. For over 10 years, we've been serving authentic North Indian, Mughlai, and Chinese cuisine made from fresh ingredients and traditional recipes.</p>
-        <p class="story-text">Every dish is prepared to order. Our tandoor is lit fresh each morning, our spices are ground in-house, and our curries are slow-cooked the way they should be. No shortcuts, no compromises — just honest food that tastes like home.</p>
+      <div class="story-grid">
+        <div class="story-image">
+          <div class="story-img-box" style="background:linear-gradient(135deg,#f59e0b,#f97316);border-radius:var(--r-lg);height:350px;display:flex;align-items:center;justify-content:center;font-size:60px;font-weight:800;font-family:var(--font-display);color:rgba(255,255,255,0.2)">MBD</div>
+        </div>
+        <div class="story-content" data-reveal>
+          <p class="story-text">MBD Food began with a simple belief — good food brings people together. For over 10 years, we've been serving authentic North Indian, Mughlai, and Chinese cuisine made from fresh ingredients and traditional recipes.</p>
+          <p class="story-text">Every dish is prepared to order. Our tandoor is lit fresh each morning, our spices are ground in-house, and our curries are slow-cooked the way they should be. No shortcuts, no compromises — just honest food that tastes like home.</p>
+          <div class="story-signature">— MBD Food Team</div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="reviews">
+    <section class="section" id="gallery">
+      <div class="section-header" data-reveal>
+        <span class="section-badge food-badge">Gallery</span>
+        <h2 class="section-title food-title">Our ambiance.</h2>
+        <p class="section-desc">Come for the food, stay for the vibe.</p>
+      </div>
+      <div class="restaurant-gallery">
+        <div class="gallery-item"><div class="gallery-img" style="background:linear-gradient(135deg,#f59e0b,#f97316)"></div></div>
+        <div class="gallery-item"><div class="gallery-img" style="background:linear-gradient(135deg,#e11d48,#be123c)"></div></div>
+        <div class="gallery-item"><div class="gallery-img" style="background:linear-gradient(135deg,#10b981,#059669)"></div></div>
+        <div class="gallery-item"><div class="gallery-img" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)"></div></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="reviews">
       <div class="section-header" data-reveal>
         <span class="section-badge food-badge">Reviews</span>
         <h2 class="section-title food-title">What our guests say.</h2>
@@ -210,10 +228,7 @@
           <p class="review-text">"The butter chicken here is the best I've had outside of Delhi. Rich, creamy, and perfectly spiced. A must-try!"</p>
           <div class="review-author">
             <div class="review-avatar">A</div>
-            <div>
-              <div class="review-name">Ananya S.</div>
-              <div class="review-source">Google Reviews</div>
-            </div>
+            <div><div class="review-name">Ananya S.</div><div class="review-source">Google Reviews</div></div>
           </div>
         </div>
         <div class="review-card glass" data-reveal>
@@ -221,21 +236,15 @@
           <p class="review-text">"Great ambience, generous portions, and reasonable prices. The dal makhani is comfort food at its best."</p>
           <div class="review-author">
             <div class="review-avatar">R</div>
-            <div>
-              <div class="review-name">Rahul M.</div>
-              <div class="review-source">Google Reviews</div>
-            </div>
+            <div><div class="review-name">Rahul M.</div><div class="review-source">Google Reviews</div></div>
           </div>
         </div>
         <div class="review-card glass" data-reveal>
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Ordered biryani for a family dinner — everyone loved it. Fresh, fragrant, and packed with flavor. Will order again."</p>
+          <p class="review-text">"Ordered biryani for a family dinner — everyone loved it. Fresh, fragrant, and packed with flavor."</p>
           <div class="review-author">
             <div class="review-avatar">P</div>
-            <div>
-              <div class="review-name">Priya K.</div>
-              <div class="review-source">Google Reviews</div>
-            </div>
+            <div><div class="review-name">Priya K.</div><div class="review-source">Google Reviews</div></div>
           </div>
         </div>
       </div>
@@ -276,22 +285,26 @@
             <span>MBD Food</span>
           </a>
           <p>Authentic Indian cuisine since 2015. Fresh, flavorful, and made with love.</p>
+          <div class="footer-contact"><span>MG Road, Near City Mall, Delhi</span><span>+91 11 2345 6789</span></div>
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
           <a href="#menu">Menu</a>
           <a href="#about">Our Story</a>
+          <a href="#gallery">Gallery</a>
           <a href="#reviews">Reviews</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
           <a href="https://wa.me/917088411468">WhatsApp Order</a>
           <a href="tel:+911123456789">Call Us</a>
+          <a href="mailto:info@mbdfood.com">Email Us</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
           <a href="#" class="legal-link" data-modal="terms">Terms</a>
           <a href="#" class="legal-link" data-modal="privacy">Privacy</a>
+          <a href="#" class="legal-link" data-modal="refund">Refund</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -301,8 +314,9 @@
     </div>
   </footer>
 
-  <div class="modal-overlay" id="modal-terms"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Terms of Service</h2><div class="modal-body"><p>Prices and menu items are subject to change without notice. Allergen information available on request. Please inform staff of any dietary restrictions before ordering.</p></div></div></div>
-  <div class="modal-overlay" id="modal-privacy"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Privacy Policy</h2><div class="modal-body"><p>Any information shared via WhatsApp, phone, or our website is used only for order processing and communication. We do not share or sell customer data to third parties.</p></div></div></div>
+  <div class="modal-overlay" id="modal-terms"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Terms</h2><div class="modal-body"><p>Prices and menu items are subject to change without notice. Allergen information available on request.</p></div></div></div>
+  <div class="modal-overlay" id="modal-privacy"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Privacy</h2><div class="modal-body"><p>Information shared via WhatsApp, phone, or website is used only for order processing. Not shared with third parties.</p></div></div></div>
+  <div class="modal-overlay" id="modal-refund"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Refund</h2><div class="modal-body"><p>Cancellations within 15 minutes of order placement are fully refundable. No refunds on customized or bulk orders.</p></div></div></div>
 
   <defs style="display:none">
     <svg><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#f97316"/></linearGradient></svg>

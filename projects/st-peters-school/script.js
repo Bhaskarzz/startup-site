@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const staggerGrids = document.querySelectorAll('.about-features, .programs-grid, .admissions-grid, .campus-grid');
+  const staggerGrids = document.querySelectorAll('.about-features, .programs-grid, .admissions-grid, .campus-grid, .facilities-grid, .gallery-grid');
   staggerGrids.forEach(grid => {
     Array.from(grid.children).forEach((child, i) => {
       child.setAttribute('data-reveal', '');
