@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Startup Name — Websites for Indian Small Businesses</title>
-  <meta name="description" content="Affordable, ready-made website templates for Indian small businesses. Starting at ₹999." />
+  <title>Websites for Indian Small Businesses</title>
+  <meta name="description" content="Affordable, ready-made website templates for Indian small businesses. Starting at Rs.999." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://gumroad.com/js/gumroad.js"></script>
 </head>
 <body>
 
-  <div class="bg-gradient"></div>
+  <!-- ====== PARALLAX LAYERS ====== -->
+  <div class="parallax-layer layer-1"></div>
+  <div class="parallax-layer layer-2"></div>
+  <div class="parallax-layer layer-3"></div>
 
   <!-- ====== MUSIC TOGGLE ====== -->
   <button id="musicToggle" class="floating-btn music-btn" aria-label="Toggle background music">
@@ -31,13 +34,21 @@
   <nav class="nav" id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <span class="logo-mark">◆</span>
+        <svg class="logo-mark" viewBox="0 0 32 32" width="32" height="32" fill="none">
+          <defs>
+            <linearGradient id="logog" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6366f1"/>
+              <stop offset="100%" stop-color="#a855f7"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="8" fill="url(#logog)" opacity="0.15"/>
+          <path d="M16 8c-4 0-6 2-6 5s2 4 4 4c2 0 4 1 4 3s-2 4-6 4" stroke="url(#logog)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M20 11h-1" stroke="url(#logog)" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
         <span class="logo-text">Startup</span>
       </a>
       <div class="nav-links">
         <a href="#products">Products</a>
-        <a href="#progress">Progress</a>
-        <a href="#roadmap">Roadmap</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-actions">
@@ -58,18 +69,18 @@
 
   <!-- ====== HERO ====== -->
   <section class="hero" id="hero">
-    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
       <span class="hero-badge">Launching Soon</span>
       <h1 class="hero-title">Websites for<br/>Indian Small Businesses</h1>
-      <p class="hero-subtitle">Professional, ready-made templates starting at ₹999 — designed for tiffin services, salons, tutors, and more.</p>
+      <p class="hero-subtitle">Professional, ready-made templates starting at Rs.999 &mdash; designed for tiffin services, salons, tutors, and more.</p>
       <div class="hero-actions">
         <a href="#products" class="btn btn-primary">View Templates</a>
-        <a href="#progress" class="btn btn-secondary">Our Journey</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">0</span><span class="stat-label">Templates</span></div>
-        <div class="stat"><span class="stat-num">0</span><span class="stat-label">Customers</span></div>
-        <div class="stat"><span class="stat-num">₹999</span><span class="stat-label">Starting Price</span></div>
+        <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">Templates</span></div>
+        <div class="stat"><span class="stat-num" data-target="0">0</span><span class="stat-label">Customers</span></div>
+        <div class="stat"><span class="stat-num" data-target="999">999</span><span class="stat-label">Starting Price</span></div>
       </div>
     </div>
   </section>
@@ -81,160 +92,187 @@
       <h2 class="section-title">Ready-Made Templates</h2>
       <p class="section-desc">Pick a template, add your content, and go live in minutes.</p>
     </div>
-    <div class="products-grid">
-      <div class="product-card glass" data-aos="fade-up" data-aos-delay="0">
-        <div class="product-preview">
-          <div class="preview-placeholder">
-            <span class="preview-icon">🍱</span>
-            <span>Tiffin Service</span>
-          </div>
-        </div>
-        <div class="product-info">
-          <h3 class="product-name">Tiffin Service</h3>
-          <p class="product-desc">5-page website with menu, gallery, WhatsApp ordering, and Google Maps.</p>
-          <div class="product-meta">
-            <span class="product-price">₹999</span>
-            <span class="product-badge">Ready</span>
-          </div>
-          <div class="product-actions">
-            <a class="gumroad-button btn btn-primary btn-sm" href="https://gumroad.com/l/placeholder">Buy Now</a>
-            <a href="#" class="btn btn-outline btn-sm">Live Demo</a>
-          </div>
-        </div>
-      </div>
+    <div class="products-scroll" data-aos="fade-up">
+      <div class="products-track" id="productsTrack">
 
-      <div class="product-card glass" data-aos="fade-up" data-aos-delay="100">
-        <div class="product-preview">
-          <div class="preview-placeholder coming-soon">
-            <span class="preview-icon">💇</span>
-            <span>Salon</span>
+        <div class="product-card glass tilt-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="product-preview">
+            <div class="preview-placeholder">
+              <svg class="preview-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="6" y="10" width="36" height="28" rx="3"/><line x1="6" y1="18" x2="42" y2="18"/><line x1="20" y1="10" x2="20" y2="38"/><line x1="12" y1="24" x2="16" y2="24"/><line x1="12" y1="28" x2="16" y2="28"/><line x1="26" y1="24" x2="36" y2="24"/><line x1="26" y1="28" x2="36" y2="28"/><line x1="26" y1="32" x2="32" y2="32"/>
+              </svg>
+              <span>Tiffin Service</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Tiffin Service</h3>
+            <p class="product-desc">5-page website with menu, gallery, WhatsApp ordering, and Google Maps.</p>
+            <div class="product-meta">
+              <span class="product-price">Rs.999</span>
+              <span class="product-badge">Ready</span>
+            </div>
+            <div class="product-actions">
+              <a class="gumroad-button btn btn-primary btn-sm" href="https://gumroad.com/l/placeholder">Buy Now</a>
+              <a href="#" class="btn btn-outline btn-sm">Live Demo</a>
+            </div>
           </div>
         </div>
-        <div class="product-info">
-          <h3 class="product-name">Salon / Barber</h3>
-          <p class="product-desc">Booking system, service menu, price list, and stylist profiles.</p>
-          <div class="product-meta">
-            <span class="product-price">₹999</span>
-            <span class="product-badge badge-coming">Coming Soon</span>
-          </div>
-          <button class="btn btn-outline btn-sm notify-btn" disabled>Notify Me</button>
-        </div>
-      </div>
 
-      <div class="product-card glass" data-aos="fade-up" data-aos-delay="200">
-        <div class="product-preview">
-          <div class="preview-placeholder coming-soon">
-            <span class="preview-icon">📚</span>
-            <span>Home Tutor</span>
+        <div class="product-card glass tilt-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="product-preview">
+            <div class="preview-placeholder coming-soon">
+              <svg class="preview-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="24" cy="16" r="6"/><path d="M10 40c0-7 6-13 14-13s14 6 14 13"/><rect x="17" y="21" width="14" height="8" rx="2"/>
+              </svg>
+              <span>Salon</span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Salon / Barber</h3>
+            <p class="product-desc">Booking system, service menu, price list, and stylist profiles.</p>
+            <div class="product-meta">
+              <span class="product-price">Rs.999</span>
+              <span class="product-badge badge-coming">Coming Soon</span>
+            </div>
+            <button class="btn btn-outline btn-sm notify-btn" disabled>Notify Me</button>
           </div>
         </div>
-        <div class="product-info">
-          <h3 class="product-name">Home Tutor</h3>
-          <p class="product-desc">Profile page, subject list, student reviews, and enquiry form.</p>
-          <div class="product-meta">
-            <span class="product-price">₹999</span>
-            <span class="product-badge badge-coming">Coming Soon</span>
+
+        <div class="product-card glass tilt-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="product-preview">
+            <div class="preview-placeholder coming-soon">
+              <svg class="preview-svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 6h24l6 6v30H6V12l6-6z"/><line x1="6" y1="12" x2="42" y2="12"/><rect x="14" y="18" width="20" height="14" rx="1"/><line x1="14" y1="36" x2="34" y2="36"/>
+              </svg>
+              <span>Home Tutor</span>
+            </div>
           </div>
-          <button class="btn btn-outline btn-sm notify-btn" disabled>Notify Me</button>
+          <div class="product-info">
+            <h3 class="product-name">Home Tutor</h3>
+            <p class="product-desc">Profile page, subject list, student reviews, and enquiry form.</p>
+            <div class="product-meta">
+              <span class="product-price">Rs.999</span>
+              <span class="product-badge badge-coming">Coming Soon</span>
+            </div>
+            <button class="btn btn-outline btn-sm notify-btn" disabled>Notify Me</button>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ====== PROGRESS ====== -->
-  <section class="section section-alt" id="progress">
-    <div class="section-header" data-aos="fade-up">
-      <span class="section-badge">Our Journey</span>
-      <h2 class="section-title">Building in Public</h2>
-      <p class="section-desc">Follow along as we build this startup from scratch.</p>
-    </div>
-    <div class="timeline" data-aos="fade-up">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass">
-          <span class="timeline-date">Week 1</span>
-          <h3>Project Started</h3>
-          <p>Built the first template and launched this website.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass">
-          <span class="timeline-date">Week 2</span>
-          <h3>First Customer</h3>
-          <p>Got first feedback from local business owners.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass">
-          <span class="timeline-date">Week 3</span>
-          <h3>Store Goes Live</h3>
-          <p>Templates available for purchase online.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content glass">
-          <span class="timeline-date">Now</span>
-          <h3>You Are Here</h3>
-          <p>Next: Salon template, payment gateway, and marketing.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ====== PROTECTED SECTIONS (Password Gate) ====== -->
+  <div id="protectedArea">
 
-  <!-- ====== ROADMAP ====== -->
-  <section class="section" id="roadmap">
-    <div class="section-header" data-aos="fade-up">
-      <span class="section-badge">What's Next</span>
-      <h2 class="section-title">Roadmap</h2>
-      <p class="section-desc">Everything we're planning to build.</p>
-    </div>
-    <div class="roadmap-grid" data-aos="fade-up">
-      <div class="roadmap-card glass">
-        <div class="roadmap-icon">📋</div>
-        <h3>Templates</h3>
-        <ul>
-          <li>✔ Tiffin Service</li>
-          <li class="in-progress">🔄 Salon / Barber</li>
-          <li>⬜ Home Tutor</li>
-          <li>⬜ Bakery</li>
-          <li>⬜ Photographer</li>
-        </ul>
-      </div>
-      <div class="roadmap-card glass">
-        <div class="roadmap-icon">⚡</div>
-        <h3>Features</h3>
-        <ul>
-          <li>✔ Gumroad Payments</li>
-          <li>⬜ Razorpay Integration</li>
-          <li>⬜ Custom Domain Option</li>
-          <li>⬜ WhatsApp Booking</li>
-        </ul>
-      </div>
-      <div class="roadmap-card glass">
-        <div class="roadmap-icon">📢</div>
-        <h3>Marketing</h3>
-        <ul>
-          <li>✔ Website Live</li>
-          <li>⬜ Instagram Presence</li>
-          <li>⬜ WhatsApp Group Joins</li>
-          <li>⬜ Local Partnerships</li>
-        </ul>
-      </div>
-      <div class="roadmap-card glass">
-        <div class="roadmap-icon">🚀</div>
-        <h3>Growth</h3>
-        <ul>
-          <li>⬜ 10 Customers</li>
-          <li>⬜ 5 Templates</li>
-          <li>⬜ ₹50K Monthly Revenue</li>
-          <li>⬜ Full-Time Startup</li>
-        </ul>
+    <!-- Lock Overlay -->
+    <div class="lock-overlay" id="lockOverlay">
+      <div class="lock-card glass" data-aos="fade-up">
+        <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <h2>Private Dashboard</h2>
+        <p>This section is for founders only. Enter the password to view progress and roadmap.</p>
+        <div class="lock-input-group">
+          <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off" />
+          <button id="unlockBtn" class="btn btn-primary">Unlock</button>
+        </div>
+        <p class="lock-error" id="lockError"></p>
       </div>
     </div>
-  </section>
+
+    <!-- ====== PROGRESS ====== -->
+    <section class="section section-alt" id="progress">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Our Journey</span>
+        <h2 class="section-title">Building in Public</h2>
+        <p class="section-desc">Follow along as we build this startup from scratch.</p>
+      </div>
+      <div class="timeline" data-aos="fade-up">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass">
+            <span class="timeline-date">Week 1</span>
+            <h3>Project Started</h3>
+            <p>Built the first template and launched this website.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass">
+            <span class="timeline-date">Week 2</span>
+            <h3>First Customer</h3>
+            <p>Got first feedback from local business owners.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass">
+            <span class="timeline-date">Week 3</span>
+            <h3>Store Goes Live</h3>
+            <p>Templates available for purchase online.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass">
+            <span class="timeline-date">Now</span>
+            <h3>You Are Here</h3>
+            <p>Next: Salon template, payment gateway, and marketing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== ROADMAP ====== -->
+    <section class="section" id="roadmap">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">What's Next</span>
+        <h2 class="section-title">Roadmap</h2>
+        <p class="section-desc">Everything we're planning to build.</p>
+      </div>
+      <div class="roadmap-grid" data-aos="fade-up">
+        <div class="roadmap-card glass tilt-card-sm">
+          <h3>Templates</h3>
+          <ul>
+            <li class="done">Tiffin Service</li>
+            <li class="progress">Salon / Barber</li>
+            <li>Home Tutor</li>
+            <li>Bakery</li>
+            <li>Photographer</li>
+          </ul>
+        </div>
+        <div class="roadmap-card glass tilt-card-sm">
+          <h3>Features</h3>
+          <ul>
+            <li class="done">Gumroad Payments</li>
+            <li>Razorpay Integration</li>
+            <li>Custom Domain Option</li>
+            <li>WhatsApp Booking</li>
+          </ul>
+        </div>
+        <div class="roadmap-card glass tilt-card-sm">
+          <h3>Marketing</h3>
+          <ul>
+            <li class="done">Website Live</li>
+            <li>Instagram Presence</li>
+            <li>WhatsApp Group Joins</li>
+            <li>Local Partnerships</li>
+          </ul>
+        </div>
+        <div class="roadmap-card glass tilt-card-sm">
+          <h3>Growth</h3>
+          <ul>
+            <li>10 Customers</li>
+            <li>5 Templates</li>
+            <li>Rs.50K Monthly Revenue</li>
+            <li>Full-Time Startup</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
 
   <!-- ====== CONTACT ====== -->
   <section class="section section-alt" id="contact">
@@ -264,7 +302,7 @@
   <!-- ====== FOOTER ====== -->
   <footer class="footer">
     <div class="footer-inner">
-      <p class="footer-copy">&copy; 2026 Startup Name. Made with ❤️ in India.</p>
+      <p class="footer-copy">&copy; 2026 Startup. Built by Bhaskar &amp; ISHANT.</p>
       <p class="footer-tagline">Empowering Indian small businesses with beautiful websites.</p>
     </div>
   </footer>

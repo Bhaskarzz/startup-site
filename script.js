@@ -14,20 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // NAVBAR SCROLL EFFECT
   // ============================================================
   const navbar = document.getElementById('navbar');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll > 20) {
+    if (window.pageYOffset > 20) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
-    lastScroll = currentScroll;
   });
 
   // ============================================================
-  // THEME TOGGLE (Dark / Light)
+  // THEME TOGGLE
   // ============================================================
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
@@ -122,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================================
-  // SMOOTH SCROLL FOR NAV LINKS
+  // SMOOTH SCROLL
   // ============================================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -139,7 +136,89 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================================
-  // STAT COUNTER (Animate on scroll)
+  // PASSWORD GATE
+  // ============================================================
+  const CORRECT_PASSWORD = 'admin01022011';
+  const lockOverlay = document.getElementById('lockOverlay');
+  const passwordInput = document.getElementById('passwordInput');
+  const unlockBtn = document.getElementById('unlockBtn');
+  const lockError = document.getElementById('lockError');
+  const protectedArea = document.getElementById('protectedArea');
+
+  const isUnlocked = sessionStorage.getItem('dashboardUnlocked');
+
+  if (isUnlocked === 'true') {
+    lockOverlay.classList.add('unlocked');
+  }
+
+  function unlockDashboard() {
+    lockOverlay.classList.add('unlocked');
+    sessionStorage.setItem('dashboardUnlocked', 'true');
+    lockError.textContent = '';
+    passwordInput.value = '';
+
+    if (window.AOS) {
+      AOS.refresh();
+    }
+  }
+
+  unlockBtn.addEventListener('click', () => {
+    const entered = passwordInput.value.trim();
+    if (entered === CORRECT_PASSWORD) {
+      unlockDashboard();
+    } else {
+      lockError.textContent = 'Incorrect password. Try again.';
+      passwordInput.value = '';
+      passwordInput.focus();
+    }
+  });
+
+  passwordInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      unlockBtn.click();
+    }
+  });
+
+  // ============================================================
+  // 3D TILT EFFECT
+  // ============================================================
+  const tiltCards = document.querySelectorAll('.tilt-card, .tilt-card-sm');
+
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / centerY * -8;
+      const rotateY = (x - centerX) / centerX * 8;
+
+      card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+    });
+  });
+
+  // ============================================================
+  // PARALLAX SCROLL
+  // ============================================================
+  const layers = document.querySelectorAll('.parallax-layer');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+
+    layers.forEach((layer, i) => {
+      const speed = 0.05 * (i + 1);
+      const yPos = scrollY * speed;
+      layer.style.transform = `translateY(${yPos}px)`;
+    });
+  });
+
+  // ============================================================
+  // STAT COUNTER
   // ============================================================
   const statNumbers = document.querySelectorAll('.stat-num');
   let counted = false;
@@ -147,19 +226,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function countUp() {
     if (counted) return;
     counted = true;
+
     statNumbers.forEach(stat => {
-      const text = stat.textContent;
-      if (text === '₹999') return;
-      const target = parseInt(text) || 0;
+      const target = parseInt(stat.dataset.target) || 0;
+      const suffix = stat.textContent.replace(/[\d]/g, '');
       let current = 0;
-      const increment = Math.ceil(target / 30);
+      const increment = Math.max(1, Math.ceil(target / 30));
       const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
           current = target;
           clearInterval(timer);
         }
-        stat.textContent = current;
+        stat.textContent = suffix ? `Rs.${current}` : current;
       }, 50);
     });
   }
