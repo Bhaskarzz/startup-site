@@ -1,183 +1,325 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Startup — Websites for Indian Small Businesses</title>
-  <meta name="description" content="Affordable, professional website templates for Indian small businesses." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2306b6d4' opacity='0.15'/><path d='M16 8c-4 0-6 2-6 5s2 4 4 4c2 0 4 1 4 3s-2 4-6 4' stroke='%2306b6d4' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional websites for Indian small businesses. Affordable, customizable templates with no coding required.">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+      style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+      font-src 'self' https://fonts.gstatic.com;
+      script-src 'self' 'unsafe-inline';
+      media-src 'self';
+      img-src 'self' data:;
+      connect-src 'none';
+      form-action 'none';
+      frame-ancestors 'none'">
+  <title>Webforge - Websites for Indian Businesses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <nav class="nav" id="navbar">
+  <nav>
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
-          <rect width="32" height="32" rx="8" fill="url(#lg)" opacity="0.12"/>
-          <path d="M16 8c-4 0-6 2-6 5s2 4 4 4c2 0 4 1 4 3s-2 4-6 4" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <span class="logo-text">Startup</span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="templates.html">Templates</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
+      <a href="index.html" class="nav-logo">web<span>forge</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
       <div class="nav-actions">
-        <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="nav-btn" id="themeToggle" aria-label="Toggle theme">
+          <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+        <button class="nav-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </button>
       </div>
-      <button class="mobile-btn" id="mobileBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="templates.html">Templates</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
   </nav>
 
-  <button id="musicToggle" class="floating-btn music-btn" aria-label="Toggle music">
-    <svg class="icon-music-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-    <svg class="icon-music-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-  </button>
-  <audio id="bgMusic" src="assets/audio/lofi.mp3" loop preload="none"></audio>
-
-  <main>
+  <main class="page-fade-in">
     <section class="hero">
-      <div class="hero-bg">
-        <div class="hero-shape hero-shape-1"></div>
-        <div class="hero-shape hero-shape-2"></div>
-        <div class="hero-shape hero-shape-3"></div>
-      </div>
-      <div class="hero-content" data-aos="fade-up">
-        <span class="hero-badge">Now Available</span>
-        <h1 class="hero-title">Websites for<br/>Indian Small Businesses</h1>
-        <p class="hero-subtitle">Professional templates starting at Rs.999. Built for tiffin services, salons, tutors, and more. Launch in minutes.</p>
+      <div class="container">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          For Indian small businesses
+        </div>
+        <h1>
+          Websites that work<br>
+          for your <span>business</span>
+        </h1>
+        <p>
+          Professional, affordable website templates designed for Indian small businesses.
+          No coding, no complexity. Just a beautiful site that helps you grow.
+        </p>
         <div class="hero-actions">
-          <a href="templates.html" class="btn btn-primary">Browse Templates</a>
-          <a href="about.html" class="btn btn-outline">Our Story</a>
+          <a href="templates.html" class="btn btn-primary">
+            Browse templates
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="about.html" class="btn btn-secondary">
+            Our story
+          </a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Templates</span></div>
-          <div class="stat"><span class="stat-num">Rs.999</span><span class="stat-label">Starting Price</span></div>
-          <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Pages Each</span></div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">4</div>
+            <div class="hero-stat-label">Templates</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">Free</div>
+            <div class="hero-stat-label">To inquire</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">100%</div>
+            <div class="hero-stat-label">Customizable</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="featured" data-aos="fade-up">
-      <div class="section-header">
-        <span class="section-badge">Featured</span>
-        <h2 class="section-title">Our templates.</h2>
-        <p class="section-desc">Ready-made websites for Indian small businesses. Pick yours.</p>
-      </div>
-      <div class="featured-grid">
-        <a href="templates.html" class="featured-card glass">
-          <div class="featured-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="8" width="40" height="32" rx="4"/><line x1="4" y1="16" x2="44" y2="16"/><line x1="22" y1="8" x2="22" y2="40"/><line x1="12" y1="24" x2="18" y2="24"/><line x1="12" y1="28" x2="18" y2="28"/><line x1="28" y1="24" x2="38" y2="24"/><line x1="28" y1="28" x2="38" y2="28"/></svg>
-          </div>
-          <h3>Tiffin Service</h3>
-          <p>Menu, gallery, WhatsApp ordering &amp; more.</p>
-          <span class="featured-price">Rs.999</span>
-        </a>
-        <a href="templates.html" class="featured-card glass">
-          <div class="featured-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="14" r="7"/><path d="M6 40c0-10 8-18 18-18s18 8 18 18"/></svg>
-          </div>
-          <h3>Salon / Barber</h3>
-          <p>Booking, services, stylists &amp; pricing.</p>
-          <span class="featured-price soon">Coming Soon</span>
-        </a>
-        <a href="templates.html" class="featured-card glass">
-          <div class="featured-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 4h28l8 8v32H2V12l8-8z"/><line x1="2" y1="12" x2="46" y2="12"/><rect x="14" y="18" width="20" height="16" rx="2"/></svg>
-          </div>
-          <h3>Home Tutor</h3>
-          <p>Profile, subjects, reviews &amp; enquiries.</p>
-          <span class="featured-price soon">Coming Soon</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="section section-alt founders-preview" data-aos="fade-up">
-      <div class="section-header">
-        <h2 class="section-title">Built by Bhaskar &amp; ISHANT.</h2>
-        <p class="section-desc">Two friends helping Indian small businesses get online. Explore our story.</p>
-        <a href="about.html" class="btn btn-outline" style="margin-top:20px;">Meet the Founders</a>
-      </div>
-    </section>
-
-    <section class="section cta-section" data-aos="fade-up">
-      <div class="cta-card glass">
-        <h2>Ready to go online?</h2>
-        <p>Get a professional website for your business in minutes. No coding required.</p>
-        <div class="cta-actions">
-          <a href="templates.html" class="btn btn-primary">View Templates</a>
-          <a href="contact.html" class="btn btn-outline">Contact Us</a>
+    <section class="section" id="templates">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Templates</div>
+          <h2 class="section-title">Choose your starting point</h2>
+          <p class="section-desc">Each template is fully customizable. Pick one that fits your industry, and we will tailor it to your brand.</p>
         </div>
+        <div class="templates-grid">
+          <div class="template-card">
+            <div class="template-preview template-preview-bg1">
+              <div class="template-preview-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.334a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 9.5 1.5-1.5"/></svg>
+              </div>
+            </div>
+            <div class="template-info">
+              <div class="template-name">Vyapaar</div>
+              <div class="template-desc">A clean, professional theme for retail businesses, shops, and local stores. Product showcase and contact-focused layout.</div>
+              <div class="template-tags">
+                <span class="template-tag">Business</span>
+                <span class="template-tag">Retail</span>
+                <span class="template-tag">Single page</span>
+              </div>
+              <a href="contact.html" class="template-action">
+                Inquire about this template
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="template-card">
+            <div class="template-preview template-preview-bg2">
+              <div class="template-preview-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+            <div class="template-info">
+              <div class="template-name">Udyog</div>
+              <div class="template-desc">Built for manufacturing, industrial, and B2B companies. Focus on services, portfolio, and trust signals.</div>
+              <div class="template-tags">
+                <span class="template-tag">Industrial</span>
+                <span class="template-tag">B2B</span>
+                <span class="template-tag">Services</span>
+              </div>
+              <a href="contact.html" class="template-action">
+                Inquire about this template
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="template-card">
+            <div class="template-preview template-preview-bg3">
+              <div class="template-preview-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+            </div>
+            <div class="template-info">
+              <div class="template-name">Saarthi</div>
+              <div class="template-desc">Designed for consultants, coaches, agencies, and service providers. Lead generation and portfolio focused.</div>
+              <div class="template-tags">
+                <span class="template-tag">Services</span>
+                <span class="template-tag">Consulting</span>
+                <span class="template-tag">Portfolio</span>
+              </div>
+              <a href="contact.html" class="template-action">
+                Inquire about this template
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="template-card">
+            <div class="template-preview template-preview-bg4">
+              <div class="template-preview-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 7h-15"/><path d="M19.5 7v9"/><path d="M4.5 7v9"/><path d="M4.5 16a2.5 2.5 0 0 0 5 0"/><path d="M14.5 16a2.5 2.5 0 0 0 5 0"/><path d="M12 2v5"/><path d="m8 9 4-4 4 4"/></svg>
+              </div>
+            </div>
+            <div class="template-info">
+              <div class="template-name">Craft</div>
+              <div class="template-desc">A creative portfolio theme for artists, photographers, designers, and makers. Visual storytelling first.</div>
+              <div class="template-tags">
+                <span class="template-tag">Portfolio</span>
+                <span class="template-tag">Creative</span>
+                <span class="template-tag">Gallery</span>
+              </div>
+              <a href="contact.html" class="template-action">
+                Inquire about this template
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Why us</div>
+          <h2 class="section-title">Built for Indian businesses, by builders who get it</h2>
+          <p class="section-desc">We know the challenges of getting online in India. Affordable, mobile-friendly, and designed to convert.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <div class="feature-title">Mobile-first design</div>
+            <div class="feature-desc">Every template is built for mobile first. Your site will look great on any device, from feature phones to desktops.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <div class="feature-title">Easy to customize</div>
+            <div class="feature-desc">Pick a template, tell us your brand colors and content. We handle the rest. No coding or design skills needed.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="feature-title">Fast & secure</div>
+            <div class="feature-desc">Lightweight code, optimized images, and security best practices built in. Your site loads fast and stays safe.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Ready to get online?</h2>
+        <p class="cta-desc">Pick a template, and we will build a website that works as hard as you do. No commitments, just a conversation.</p>
+        <a href="contact.html" class="btn btn-primary">
+          Get in touch
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
+  <footer>
+    <div class="container">
       <div class="footer-grid">
-        <div class="footer-col footer-brand">
-          <a href="index.html" class="footer-logo">
-            <svg viewBox="0 0 32 32" width="22" height="22" fill="none"><rect width="32" height="32" rx="8" fill="url(#lg)" opacity="0.12"/><path d="M16 8c-4 0-6 2-6 5s2 4 4 4c2 0 4 1 4 3s-2 4-6 4" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"/></svg>
-            <span>Startup</span>
-          </a>
-          <p>Professional website templates for Indian small businesses.</p>
+        <div>
+          <a href="index.html" class="nav-logo">web<span>forge</span></a>
+          <p class="footer-brand-desc">Professional websites for Indian small businesses. Affordable, clean, and built to help you grow.</p>
         </div>
-        <div class="footer-col">
-          <h4>Templates</h4>
-          <a href="templates.html">Tiffin Service</a>
-          <a href="templates.html">Salon / Barber</a>
-          <a href="templates.html">Home Tutor</a>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="templates.html">Templates</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <a href="#" class="legal-link" data-modal="terms">Terms</a>
-          <a href="#" class="legal-link" data-modal="privacy">Privacy</a>
-          <a href="#" class="legal-link" data-modal="refund">Refund</a>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/917088411468" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="mailto:bhaskarz01022011@gmail.com">Email</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Startup. Built by Bhaskar &amp; ISHANT.</p>
-        <div class="footer-social">
-          <a href="https://wa.me/917088411468" target="_blank" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </a>
-          <a href="https://instagram.com/yourhandle" target="_blank" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="mailto:bhaskarz01022011@gmail.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
+        <span class="footer-copyright">2025 Webforge. All rights reserved.</span>
+        <div class="footer-legal">
+          <button data-modal="termsModal">Terms</button>
+          <button data-modal="privacyModal">Privacy</button>
+          <button data-modal="refundModal">Refund</button>
         </div>
       </div>
     </div>
   </footer>
 
-  <div class="modal-overlay" id="modal-terms"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Terms of Service</h2><div class="modal-body"><p>By purchasing and using our templates, you agree to the following terms.</p><h4>License</h4><p>Single-use license per purchase. You may modify for your business but may not resell as a template.</p><h4>Refunds</h4><p>Digital products are final sale. Contact us if you have issues within 7 days.</p><h4>Support</h4><p>Basic setup support via WhatsApp and email. Custom modifications not included.</p></div></div></div>
-  <div class="modal-overlay" id="modal-privacy"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Privacy Policy</h2><div class="modal-body"><h4>Information We Collect</h4><p>Name and email when you join waitlist or contact us. Used only for communication.</p><h4>Data Sharing</h4><p>We do not sell or share your data with third parties.</p><h4>Contact</h4><p>To request deletion: bhaskarz01022011@gmail.com</p></div></div></div>
-  <div class="modal-overlay" id="modal-refund"><div class="modal-content glass"><button class="modal-close modal-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><h2>Refund Policy</h2><div class="modal-body"><h4>Digital Products</h4><p>All template purchases are final. Contact us within 7 days if something is broken.</p><h4>Disputes</h4><p>Email us before filing any dispute. We're a small team and will help.</p></div></div></div>
+  <div class="modal-overlay" id="termsModal">
+    <div class="modal">
+      <button class="modal-close" data-modal-close="termsModal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <h2>Terms of Service</h2>
+      <p>By using Webforge templates and services, you agree to the following terms:</p>
+      <ul>
+        <li>All template designs remain the intellectual property of Webforge until full payment is received.</li>
+        <li>Upon purchase, you receive a license to use the template for your business website.</li>
+        <li>Templates are provided "as is" without warranty of any kind.</li>
+        <li>We reserve the right to update these terms at any time.</li>
+        <li>You may not resell or redistribute our templates as your own.</li>
+      </ul>
+    </div>
+  </div>
 
-  <defs style="display:none">
-    <svg><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></svg>
-  </defs>
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal">
+      <button class="modal-close" data-modal-close="privacyModal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <h2>Privacy Policy</h2>
+      <p>Your privacy matters to us. Here is how we handle your information:</p>
+      <ul>
+        <li>We do not collect any personal data through this website.</li>
+        <li>We do not use cookies or tracking scripts.</li>
+        <li>Any information you share via WhatsApp or email is kept confidential.</li>
+        <li>We do not sell, trade, or share your information with third parties.</li>
+        <li>This website is hosted on GitHub Pages and may be subject to their privacy policy.</li>
+      </ul>
+    </div>
+  </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <div class="modal-overlay" id="refundModal">
+    <div class="modal">
+      <button class="modal-close" data-modal-close="refundModal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <h2>Refund Policy</h2>
+      <p>Our refund policy is simple and fair:</p>
+      <ul>
+        <li>Full refund within 7 days of delivery if the template does not meet the agreed specifications.</li>
+        <li>Refunds are processed within 5-7 business days.</li>
+        <li>Custom work beyond template customization is non-refundable once completed.</li>
+        <li>To request a refund, contact us via WhatsApp or email with your order details.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="music-indicator" id="musicToggle" title="Toggle background music">
+    <span class="music-indicator-dot" id="musicDot"></span>
+    <span id="musicLabel">Music</span>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

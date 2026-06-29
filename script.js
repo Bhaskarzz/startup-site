@@ -1,95 +1,120 @@
-document.addEventListener('DOMContentLoaded', () => {
+(function () {
+  'use strict';
 
-  AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+  var audio = null;
+  var isPlaying = false;
 
-  // ====== NAV ======
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.pageYOffset > 20);
-  });
+  /* ------- Theme ------- */
+  var themeToggle = document.getElementById('themeToggle');
+  var themeIcon = document.getElementById('themeIcon');
+  var html = document.documentElement;
 
-  // ====== THEME ======
-  const themeToggle = document.getElementById('themeToggle');
-  const html = document.documentElement;
-  if (themeToggle) {
-    const sunIcon = themeToggle.querySelector('.icon-sun');
-    const moonIcon = themeToggle.querySelector('.icon-moon');
-    const saved = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', saved);
-    updateIcons(saved);
-
-    themeToggle.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateIcons(next);
-    });
-
-    function updateIcons(t) {
-      if (t === 'dark') { sunIcon.style.display = 'block'; moonIcon.style.display = 'none'; }
-      else { sunIcon.style.display = 'none'; moonIcon.style.display = 'block'; }
-    }
+  function getPreferredTheme() {
+    var stored = localStorage.getItem('theme');
+    if (stored) return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  // ====== MUSIC ======
-  const musicToggle = document.getElementById('musicToggle');
-  const bgMusic = document.getElementById('bgMusic');
-  if (musicToggle && bgMusic) {
-    const musicOn = musicToggle.querySelector('.icon-music-on');
-    const musicOff = musicToggle.querySelector('.icon-music-off');
-    let playing = false;
-
-    if (localStorage.getItem('musicPlaying') === 'true') {
-      bgMusic.play().then(() => { playing = true; updateMusic(true); }).catch(() => {});
-    }
-
-    musicToggle.addEventListener('click', () => {
-      if (playing) {
-        bgMusic.pause(); playing = false; updateMusic(false);
-        localStorage.setItem('musicPlaying', 'false');
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    if (themeIcon) {
+      if (theme === 'dark') {
+        themeIcon.innerHTML = '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>';
       } else {
-        bgMusic.play().then(() => { playing = true; updateMusic(true); localStorage.setItem('musicPlaying', 'true'); }).catch(() => {});
+        themeIcon.innerHTML = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>';
       }
-    });
-
-    function updateMusic(p) {
-      if (p) { musicOn.style.display = 'none'; musicOff.style.display = 'block'; musicToggle.classList.add('playing'); }
-      else { musicOn.style.display = 'block'; musicOff.style.display = 'none'; musicToggle.classList.remove('playing'); }
     }
   }
 
-  // ====== MOBILE MENU ======
-  const mobileBtn = document.getElementById('mobileBtn');
-  const navLinks = document.querySelector('.nav-links');
-  if (mobileBtn && navLinks) {
-    mobileBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  setTheme(getPreferredTheme());
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    });
   }
 
-  // ====== LEGAL MODALS ======
-  document.querySelectorAll('.legal-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const modal = document.getElementById('modal-' + link.dataset.modal);
-      if (modal) { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    });
-  });
+  /* ------- Music ------- */
+  var musicToggle = document.getElementById('musicToggle');
+  var musicDot = document.getElementById('musicDot');
+  var musicLabel = document.getElementById('musicLabel');
 
-  document.querySelectorAll('.modal-close-btn, .modal-overlay').forEach(el => {
-    el.addEventListener('click', (e) => {
-      if (e.target === el || el.classList.contains('modal-close-btn')) {
-        const modal = el.closest('.modal-overlay');
-        if (modal) { modal.classList.remove('open'); document.body.style.overflow = ''; }
+  function toggleMusic() {
+    if (!audio) {
+      audio = new Audio('assets/audio/lofi.mp3');
+      audio.loop = true;
+      audio.volume = 0.3;
+    }
+    if (isPlaying) {
+      audio.pause();
+      isPlaying = false;
+      if (musicDot) musicDot.classList.add('paused');
+      if (musicLabel) musicLabel.textContent = 'Music';
+    } else {
+      audio.play().catch(function () {});
+      isPlaying = true;
+      if (musicDot) musicDot.classList.remove('paused');
+      if (musicLabel) musicLabel.textContent = 'Playing';
+    }
+  }
+
+  if (musicToggle) {
+    musicToggle.addEventListener('click', toggleMusic);
+  }
+
+  /* ------- Mobile Menu ------- */
+  var mobileBtn = document.getElementById('mobileMenuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  /* ------- Legal Modals ------- */
+  var modalTriggers = document.querySelectorAll('[data-modal]');
+  var modalCloseBtns = document.querySelectorAll('[data-modal-close]');
+
+  modalTriggers.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-modal');
+      var overlay = document.getElementById(id);
+      if (overlay) {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
       }
     });
   });
 
-  // ====== STATS ======
-  const stats = document.querySelector('.hero-stats');
-  if (stats) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; observer.unobserve(e.target); } });
-    }, { threshold: 0.5 });
-    observer.observe(stats);
-  }
-});
+  modalCloseBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-modal-close');
+      var overlay = document.getElementById(id);
+      if (overlay) {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('modal-overlay')) {
+      e.target.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(function (el) {
+        el.classList.remove('open');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+
+})();
