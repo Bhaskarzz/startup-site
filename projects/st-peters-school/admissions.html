@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions — St. Peter's International School</title>
+  <meta name="description" content="Join St. Peter's — discover our admission process, eligibility, and apply online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2306b6d4' opacity='0.15'/><path d='M16 4L4 12v16h10V20h4v8h10V12L16 4z' fill='%2306b6d4' opacity='0.6'/></svg>">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components/component-loader.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="page-hero-content">
+        <h1 class="page-hero-title">Admissions</h1>
+        <p class="page-hero-sub">Begin your journey at St. Peter's — where every child discovers their potential.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header" data-reveal>
+        <span class="section-badge">How to Apply</span>
+        <h2 class="section-title">Admission Process</h2>
+        <p class="section-desc">Simple steps to secure your child's place at St. Peter's International School.</p>
+      </div>
+
+      <div class="admissions-grid" data-reveal>
+        <div class="admission-step glass">
+          <div class="admission-num">01</div>
+          <h3>Submit Enquiry</h3>
+          <p>Fill the online enquiry form or visit our campus to express interest.</p>
+        </div>
+        <div class="admission-step glass">
+          <div class="admission-num">02</div>
+          <h3>Document Check</h3>
+          <p>Submit required documents: birth certificate, previous report cards, photos.</p>
+        </div>
+        <div class="admission-step glass">
+          <div class="admission-num">03</div>
+          <h3>Interaction</h3>
+          <p>Student & parent interaction session to understand readiness and fit.</p>
+        </div>
+        <div class="admission-step glass">
+          <div class="admission-num">04</div>
+          <h3>Confirmation</h3>
+          <p>Receive admission offer and complete fee payment to confirm the seat.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" style="padding:80px 24px">
+      <div class="section-header" data-reveal>
+        <span class="section-badge">Eligibility</span>
+        <h2 class="section-title">Age Criteria</h2>
+        <p class="section-desc">Admission is granted based on age eligibility for the academic year.</p>
+      </div>
+      <div class="fee-table-wrap" data-reveal>
+        <table class="fee-table">
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Minimum Age</th>
+              <th>Maximum Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Pre-Nursery</td><td>2.5 years</td><td>3.5 years</td></tr>
+            <tr><td>Nursery</td><td>3.5 years</td><td>4.5 years</td></tr>
+            <tr><td>KG</td><td>4.5 years</td><td>5.5 years</td></tr>
+            <tr><td>Class I</td><td>5.5 years</td><td>6.5 years</td></tr>
+            <tr><td>Class II-V</td><td>6-10 years</td><td>As per class</td></tr>
+            <tr><td>Class VI-X</td><td>10-15 years</td><td>As per class</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="apply">
+      <div class="section-header" data-reveal>
+        <span class="section-badge">Apply Now</span>
+        <h2 class="section-title">Online Application</h2>
+        <p class="section-desc">Fill the form below and we'll get back to you within 24 hours.</p>
+      </div>
+
+      <form class="admission-form glass" id="admissionForm" data-reveal>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="studentName">Student's Full Name *</label>
+            <input type="text" id="studentName" name="studentName" required placeholder="e.g. Aarav Sharma" />
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth *</label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="classApplying">Applying for Class *</label>
+            <select id="classApplying" name="classApplying" required>
+              <option value="">Select Class</option>
+              <option>Pre-Nursery</option>
+              <option>Nursery</option>
+              <option>KG</option>
+              <option>Class I</option>
+              <option>Class II</option>
+              <option>Class III</option>
+              <option>Class IV</option>
+              <option>Class V</option>
+              <option>Class VI</option>
+              <option>Class VII</option>
+              <option>Class VIII</option>
+              <option>Class IX</option>
+              <option>Class X</option>
+              <option>Class XI (Science)</option>
+              <option>Class XI (Commerce)</option>
+              <option>Class XII (Science)</option>
+              <option>Class XII (Commerce)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="parentName">Parent/Guardian Name *</label>
+            <input type="text" id="parentName" name="parentName" required placeholder="e.g. Rajesh Sharma" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="9876543210" pattern="[0-9]{10}" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="parent@example.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Residential Address</label>
+          <textarea id="address" name="address" rows="2" placeholder="Full address"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Application</button>
+      </form>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>

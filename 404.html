@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .error-page{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:#000;color:#fff}
+    .error-code{font-family:'Inter Tight',Inter,sans-serif;font-size:clamp(80px,15vw,160px);font-weight:800;letter-spacing:-0.06em;background:linear-gradient(135deg,#22d3ee,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+    .error-title{font-size:clamp(20px,3vw,28px);font-weight:700;margin:16px 0 8px}
+    .error-desc{color:#98989d;font-size:14px;max-width:400px;margin:0 auto 24px;line-height:1.6}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 26px;border-radius:9999px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.3s}
+    .btn-primary{background:linear-gradient(135deg,#06b6d4,#2563eb);color:white}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-outline{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);color:white}
+    .btn-outline:hover{background:rgba(255,255,255,0.12)}
+  </style>
+</head>
+<body>
+  <main class="error-page">
+    <div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page not found</h1>
+      <p class="error-desc">The page you're looking for doesn't exist or has been moved.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/" class="btn btn-primary">Go Home</a>
+        <a href="/projects/st-peters-school/" class="btn btn-outline">School Site</a>
+        <a href="/projects/mbd-food/" class="btn btn-outline">Food Site</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

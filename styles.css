@@ -21,6 +21,24 @@
   --mw: 1120px;
   --nav-h: 56px;
   --persp: 1100px;
+
+  /* Spacing scale */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-28: 112px;
 }
 
 [data-theme="light"] {
@@ -133,6 +151,15 @@ img { max-width: 100%; display: block; }
   border-radius: 4px;
 }
 
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute; top: -100%; left: 50%; transform: translateX(-50%);
+  background: var(--accent); color: white; padding: 12px 24px;
+  border-radius: var(--r-md); font-weight: 600; z-index: 10000;
+  transition: top 0.3s var(--ease);
+}
+.skip-link:focus { top: var(--space-4); }
+
 h1, h2, h3, .font-display { font-family: var(--font-display); }
 
 /* ====== LIQUID GLASS MATERIAL ======
@@ -243,7 +270,7 @@ h1, h2, h3, .font-display { font-family: var(--font-display); }
 .nav-actions { display: flex; align-items: center; gap: 8px; }
 
 .theme-btn {
-  width: 32px; height: 32px; border-radius: 50%;
+  min-width: 44px; height: 44px; border-radius: 50%;
   border: 1px solid var(--border); background: transparent;
   display: flex; align-items: center; justify-content: center;
   transition: var(--t); color: var(--text-soft);
@@ -740,7 +767,7 @@ h1, h2, h3, .font-display { font-family: var(--font-display); }
 
 .modal-close {
   position: absolute; top: 16px; right: 16px; z-index: 3;
-  width: 32px; height: 32px; border-radius: 50%;
+  width: 44px; height: 44px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   color: var(--text-soft); transition: var(--t); cursor: pointer;
 }
@@ -960,6 +987,8 @@ h1, h2, h3, .font-display { font-family: var(--font-display); }
   .templates-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+    .pricing-featured { transform: none; }
 }
 
 @media (max-width: 480px) {
@@ -972,4 +1001,27 @@ h1, h2, h3, .font-display { font-family: var(--font-display); }
   .service-card { padding: 28px 20px; }
   .pricing-card { padding: 28px 20px; }
   .policy-card { padding: 24px 20px; }
+}
+
+@media (max-width: 360px) {
+  .hero { padding: 100px 16px 60px; }
+  .hero-title { font-size: 32px; }
+  .hero-subtitle { font-size: 15px; }
+  .hero-actions { margin-bottom: 40px; }
+  .hero-actions .btn { padding: 11px 20px; font-size: 13px; }
+  .stat { padding: 0 12px; }
+  .stat-num { font-size: 18px; }
+  .section { padding: 48px 12px; }
+  .section-header { margin-bottom: 36px; }
+  .cta-card { padding: 32px 16px; border-radius: var(--r-lg); }
+  .cta-card h2 { font-size: 24px; }
+  .page-hero { padding: 110px 16px 48px; }
+  .modal-content { padding: 24px 20px; }
+  .modal-close { top: 12px; right: 12px; }
+  .footer { padding: 48px 16px 24px; }
+  .featured-card { padding: 24px 20px; }
+  .template-body { padding: 16px 18px; }
+  .project-card { padding: 20px 14px; }
+  .service-card { padding: 24px 16px; }
+  .value-card { padding: 24px 20px; }
 }

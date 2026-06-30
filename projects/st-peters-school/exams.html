@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Schedule — St. Peter's International School</title>
+  <meta name="description" content="View upcoming exam schedules, timetables, and academic calendar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2306b6d4' opacity='0.15'/><path d='M16 4L4 12v16h10V20h4v8h10V12L16 4z' fill='%2306b6d4' opacity='0.6'/></svg>">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components/component-loader.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="page-hero-content">
+        <h1 class="page-hero-title">Exam Schedule</h1>
+        <p class="page-hero-sub">Stay updated with upcoming exams, timetables, and important academic dates.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header" data-reveal>
+        <span class="section-badge">Academic Year 2025-26</span>
+        <h2 class="section-title">Examination Timetable</h2>
+        <p class="section-desc">View term-wise exam schedules for all classes.</p>
+      </div>
+
+      <div class="exams-tabs" data-reveal role="tablist">
+        <button class="exams-tab active" data-exam="examTerm1" role="tab" aria-selected="true">Term I</button>
+        <button class="exams-tab" data-exam="examTerm2" role="tab" aria-selected="false">Term II</button>
+        <button class="exams-tab" data-exam="examAnnual" role="tab" aria-selected="false">Annual</button>
+      </div>
+
+      <div class="exams-panel active" id="examTerm1" role="tabpanel">
+        <div class="exam-card glass" data-reveal>
+          <div class="exam-card-header">
+            <h3>Term I Examinations</h3>
+            <span class="exam-date">September 15 - October 5, 2025</span>
+          </div>
+          <p class="exam-note">Syllabus: All topics covered from April to August 2025.</p>
+          <table class="exam-table">
+            <thead>
+              <tr><th>Date</th><th>Subject</th><th>Duration</th><th>Max Marks</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sep 15</td><td>English</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Sep 18</td><td>Mathematics</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Sep 22</td><td>Science</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Sep 25</td><td>Social Studies</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Sep 29</td><td>Hindi</td><td>2 hrs</td><td>80</td></tr>
+              <tr><td>Oct 2</td><td>Computer Science</td><td>2 hrs</td><td>80</td></tr>
+              <tr><td>Oct 5</td><td>Physical Education</td><td>1 hr</td><td>50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="exams-panel" id="examTerm2" role="tabpanel">
+        <div class="exam-card glass" data-reveal>
+          <div class="exam-card-header">
+            <h3>Term II Examinations</h3>
+            <span class="exam-date">January 5 - January 25, 2026</span>
+          </div>
+          <p class="exam-note">Syllabus: All topics covered from October to December 2025.</p>
+          <table class="exam-table">
+            <thead>
+              <tr><th>Date</th><th>Subject</th><th>Duration</th><th>Max Marks</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Jan 5</td><td>English</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Jan 8</td><td>Mathematics</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Jan 12</td><td>Science</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Jan 15</td><td>Social Studies</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Jan 19</td><td>Hindi</td><td>2 hrs</td><td>80</td></tr>
+              <tr><td>Jan 22</td><td>Computer Science</td><td>2 hrs</td><td>80</td></tr>
+              <tr><td>Jan 25</td><td>Physical Education</td><td>1 hr</td><td>50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="exams-panel" id="examAnnual" role="tabpanel">
+        <div class="exam-card glass" data-reveal>
+          <div class="exam-card-header">
+            <h3>Annual Examinations</h3>
+            <span class="exam-date">February 20 - March 15, 2026</span>
+          </div>
+          <p class="exam-note">Syllabus: Full year curriculum (April 2025 - February 2026).</p>
+          <table class="exam-table">
+            <thead>
+              <tr><th>Date</th><th>Subject</th><th>Duration</th><th>Max Marks</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Feb 20</td><td>English</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Feb 23</td><td>Mathematics</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Feb 26</td><td>Science</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Mar 2</td><td>Social Studies</td><td>3 hrs</td><td>100</td></tr>
+              <tr><td>Mar 5</td><td>Hindi</td><td>2 hrs</td><td>80</td></tr>
+              <tr><td>Mar 10</td><td>Computer Science</td><td>2 hrs</td><td>80</td></tr>
+              <tr><td>Mar 12</td><td>Physical Education</td><td>1 hr</td><td>50</td></tr>
+              <tr><td>Mar 15</td><td>Extracurricular Assessment</td><td>—</td><td>50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" style="padding:80px 24px">
+      <div class="section-header" data-reveal>
+        <span class="section-badge">Guidelines</span>
+        <h2 class="section-title">Exam Guidelines</h2>
+        <p class="section-desc">Important instructions for students appearing in examinations.</p>
+      </div>
+      <div class="about-features" data-reveal>
+        <div class="about-feat glass">
+          <div class="about-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h3>Reporting Time</h3>
+          <p>Report 15 minutes before the exam starts. Late entries not allowed after 10 minutes.</p>
+        </div>
+        <div class="about-feat glass">
+          <div class="about-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <h3>What to Bring</h3>
+          <p>Admit card, stationery (pen, pencil, ruler, eraser). Electronic devices strictly prohibited.</p>
+        </div>
+        <div class="about-feat glass">
+          <div class="about-feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Exam Code</h3>
+          <p>Follow school uniform code. Maintain discipline. Malpractice leads to disqualification.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>

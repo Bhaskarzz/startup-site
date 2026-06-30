@@ -2,36 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  const navbar = document.getElementById('navbar');
-  if (navbar) {
-    const onScroll = () => navbar.classList.toggle('scrolled', window.pageYOffset > 20);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  const mobileBtn = document.getElementById('mobileBtn');
-  const navLinks = document.querySelector('.nav-links');
-  if (mobileBtn && navLinks) {
-    mobileBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-  }
-
-  document.querySelectorAll('.legal-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const modal = document.getElementById('modal-' + link.dataset.modal);
-      if (modal) { modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    });
-  });
-  document.querySelectorAll('.modal-close-btn, .modal-overlay').forEach(el => {
-    el.addEventListener('click', (e) => {
-      if (e.target === el || el.classList.contains('modal-close-btn')) {
-        const modal = el.closest('.modal-overlay');
-        if (modal) { modal.classList.remove('open'); document.body.style.overflow = ''; }
-      }
-    });
-  });
-
   const staggerGrids = document.querySelectorAll('.about-features, .programs-grid, .admissions-grid, .campus-grid, .facilities-grid, .gallery-grid');
   staggerGrids.forEach(grid => {
     Array.from(grid.children).forEach((child, i) => {
@@ -98,4 +68,83 @@ document.addEventListener('DOMContentLoaded', () => {
       el.addEventListener('pointerleave', () => { targetRX = 0; targetRY = 0; targetTZ = 0; ensureLoop(); });
     });
   }
+
+  /* Results Auth */
+  const resultsForm = document.getElementById('resultsAuthForm')
+  if (resultsForm) {
+    resultsForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const admno = document.getElementById('admNo').value.trim()
+      const errorEl = document.getElementById('resultsError')
+
+      if (!admno || admno.length < 4) {
+        errorEl.textContent = 'Please enter a valid Admission Number (min 4 characters).'
+        errorEl.style.display = 'block'
+        return
+      }
+
+      localStorage.setItem('spis_student', admno)
+      window.location.href = 'results/dashboard.html'
+    })
+  }
+
+  /* Results Dashboard */
+  if (window.location.pathname.includes('/results/dashboard.html')) {
+    const studentId = localStorage.getItem('spis_student')
+    if (!studentId) {
+      window.location.href = '../results.html'
+      return
+    }
+
+    const studentNameEl = document.getElementById('studentName')
+    const studentIdEl = document.getElementById('studentId')
+    if (studentNameEl) studentNameEl.textContent = 'Student Name'
+    if (studentIdEl) studentIdEl.textContent = studentId
+
+    const logout = (e) => {
+      e.preventDefault()
+      localStorage.removeItem('spis_student')
+      window.location.href = '../results.html'
+    }
+    document.getElementById('resultsLogout')?.addEventListener('click', logout)
+    document.getElementById('resultsLogout2')?.addEventListener('click', logout)
+
+    const resultsData = [
+      { subject: 'Mathematics', max: 100, marks: 92, grade: 'A' },
+      { subject: 'Science', max: 100, marks: 88, grade: 'A' },
+      { subject: 'English', max: 100, marks: 85, grade: 'A' },
+      { subject: 'Hindi', max: 100, marks: 78, grade: 'B' },
+      { subject: 'Social Studies', max: 100, marks: 90, grade: 'A' },
+      { subject: 'Computer Science', max: 100, marks: 95, grade: 'A' }
+    ]
+
+    const tbody = document.querySelector('.results-table tbody')
+    if (tbody) {
+      tbody.innerHTML = resultsData.map(r => `
+        <tr>
+          <td>${r.subject}</td>
+          <td>${r.max}</td>
+          <td class="marks">${r.marks}</td>
+          <td><span class="results-grade ${r.grade.toLowerCase()}">${r.grade}</span></td>
+        </tr>
+      `).join('')
+    }
+
+    const totalEl = document.querySelector('.results-total span:last-child')
+    if (totalEl) {
+      const total = resultsData.reduce((s, r) => s + r.marks, 0)
+      const totalMax = resultsData.reduce((s, r) => s + r.max, 0)
+      totalEl.textContent = `${total} / ${totalMax}`
+    }
+  }
+
+  /* Exam Tabs */
+  document.querySelectorAll('.exams-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.exams-tab').forEach(t => t.classList.remove('active'))
+      document.querySelectorAll('.exams-panel').forEach(p => p.classList.remove('active'))
+      tab.classList.add('active')
+      document.getElementById(tab.dataset.exam)?.classList.add('active')
+    })
+  })
 });

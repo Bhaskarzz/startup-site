@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results Dashboard — St. Peter's International School</title>
+  <meta name="description" content="Your academic performance dashboard." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2306b6d4' opacity='0.15'/><path d='M16 4L4 12v16h10V20h4v8h10V12L16 4z' fill='%2306b6d4' opacity='0.6'/></svg>">
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="../components/component-loader.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="page-hero-content">
+        <h1 class="page-hero-title">Results Dashboard</h1>
+        <p class="page-hero-sub">Annual Examination — Academic Year 2025-26</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="results-dashboard">
+        <div class="results-header glass" data-reveal>
+          <div>
+            <h2>Welcome, <span id="studentName">Student</span></h2>
+            <div class="results-student">Admission No: <span id="studentId">—</span></div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-sm btn-outline" onclick="window.print()">Print</button>
+            <button class="btn btn-sm btn-outline" id="resultsLogout">Logout</button>
+          </div>
+        </div>
+
+        <div class="results-term" data-reveal>Term: Annual Examination 2025-26 &middot; Class: X-A</div>
+
+        <div class="results-card glass" data-reveal>
+          <div class="results-card-header">
+            <h3>Subject-wise Performance</h3>
+            <span class="results-grade a">Overall: A</span>
+          </div>
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Max Marks</th>
+                <th>Marks Obtained</th>
+                <th>Grade</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="results-total" data-reveal>
+          <span>Total Marks</span>
+          <span>—</span>
+        </div>
+
+        <div class="results-logout" data-reveal>
+          <a href="#" id="resultsLogout2">Not you? Logout and switch account &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="../script.js"></script>
+</body>
+</html>

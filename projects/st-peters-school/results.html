@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results Portal — St. Peter's International School</title>
+  <meta name="description" content="Access your exam results and academic performance dashboard." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2306b6d4' opacity='0.15'/><path d='M16 4L4 12v16h10V20h4v8h10V12L16 4z' fill='%2306b6d4' opacity='0.6'/></svg>">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="components/component-loader.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div data-include="header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="page-hero-content">
+        <h1 class="page-hero-title">Results Portal</h1>
+        <p class="page-hero-sub">Access your term exam results and academic performance dashboard.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header" data-reveal>
+        <span class="section-badge">Student Login</span>
+        <h2 class="section-title">View Your Results</h2>
+        <p class="section-desc">Enter your admission number to access your marks and grades.</p>
+      </div>
+
+      <div class="results-auth glass" data-reveal>
+        <h2>Student Login</h2>
+        <form id="resultsAuthForm">
+          <div class="form-group">
+            <label for="admNo">Admission Number</label>
+            <input type="text" id="admNo" name="admNo" required placeholder="e.g. SPIS2024001" autocomplete="off" />
+          </div>
+          <button type="submit" class="btn btn-primary">View Results</button>
+          <p class="results-error" id="resultsError"></p>
+        </form>
+        <p class="results-help">Use your admission number provided by the school. Contact office if you don't have it.</p>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>
