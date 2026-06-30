@@ -53,6 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
     revealTargets.forEach(el => revealObserver.observe(el));
   }
 
+  const form = document.getElementById('admissionForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const d = new FormData(form);
+      const msg = `Hello, I'd like to apply for admission at St. Peter's.%0A%0AStudent: ${d.get('studentName')}%0ADOB: ${d.get('dob')}%0AClass: ${d.get('classApplying')}%0AParent: ${d.get('parentName')}%0APhone: ${d.get('phone')}%0AEmail: ${d.get('email')}%0AAddress: ${d.get('address')}`;
+      window.open(`https://wa.me/917088411468?text=${msg}`, '_blank');
+    });
+  }
+
   if (canHover && !reduceMotion) {
     document.querySelectorAll('.glass').forEach(el => {
       el.addEventListener('pointermove', (e) => {

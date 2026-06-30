@@ -48,6 +48,8 @@
         <a href="#academics">Academics</a>
         <a href="#facilities">Facilities</a>
         <a href="#admissions">Admissions</a>
+        <a href="#fees">Fee Structure</a>
+        <a href="#apply">Apply Now</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </div>
@@ -221,6 +223,81 @@
         <a href="https://wa.me/917088411468" class="btn btn-primary">Enquire on WhatsApp</a>
         <a href="tel:+911123456789" class="btn btn-outline">Call School</a>
       </div>
+    </section>
+
+    <section class="section section-alt" id="fees">
+      <div class="section-header" data-reveal>
+        <span class="section-badge">Fee Structure</span>
+        <h2 class="section-title">Affordable education.</h2>
+        <p class="section-desc">Transparent fee structure with no hidden charges. Annual fees for 2026-27.</p>
+      </div>
+      <div class="fee-table-wrap" data-reveal>
+        <table class="fee-table">
+          <thead>
+            <tr><th>Class</th><th>Tuition Fee</th><th>Lab Fee</th><th>Sports Fee</th><th>Total (Annual)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Nursery - KG</td><td>Rs. 25,000</td><td>Rs. 3,000</td><td>Rs. 4,000</td><td>Rs. 32,000</td></tr>
+            <tr><td>Grades 1 - 5</td><td>Rs. 35,000</td><td>Rs. 4,000</td><td>Rs. 5,000</td><td>Rs. 44,000</td></tr>
+            <tr><td>Grades 6 - 10</td><td>Rs. 45,000</td><td>Rs. 5,000</td><td>Rs. 6,000</td><td>Rs. 56,000</td></tr>
+            <tr><td>Grade 11 - 12 (Science)</td><td>Rs. 55,000</td><td>Rs. 6,000</td><td>Rs. 6,000</td><td>Rs. 67,000</td></tr>
+            <tr><td>Grade 11 - 12 (Commerce)</td><td>Rs. 50,000</td><td>Rs. 4,000</td><td>Rs. 6,000</td><td>Rs. 60,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fee-note" data-reveal>Transport, meals, and extracurricular activities charged separately. Scholarships available for meritorious students.</p>
+    </section>
+
+    <section class="section" id="apply">
+      <div class="section-header" data-reveal>
+        <span class="section-badge">Apply Now</span>
+        <h2 class="section-title">Start your journey.</h2>
+        <p class="section-desc">Fill the form and we'll get back to you within 24 hours.</p>
+      </div>
+      <form class="admission-form" id="admissionForm" data-reveal>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="studentName">Student Name *</label>
+            <input type="text" id="studentName" required placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth *</label>
+            <input type="date" id="dob" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="classApplying">Applying for Class *</label>
+            <select id="classApplying" required>
+              <option value="">Select class</option>
+              <option>Nursery</option><option>KG</option><option>Grade 1</option><option>Grade 2</option>
+              <option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+              <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option>
+              <option>Grade 11 (Science)</option><option>Grade 11 (Commerce)</option>
+              <option>Grade 12 (Science)</option><option>Grade 12 (Commerce)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="parentName">Parent Name *</label>
+            <input type="text" id="parentName" required placeholder="Full name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" required placeholder="+91 98765 43210">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="parent@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" rows="2" placeholder="Your full address"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Application</button>
+      </form>
     </section>
 
     <section class="section" id="gallery">

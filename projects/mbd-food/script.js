@@ -106,4 +106,119 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // Table number from URL
+  const params = new URLSearchParams(window.location.search);
+  const tableNo = params.get('table');
+  const tableBadge = document.getElementById('tableBadge');
+  if (tableBadge && tableNo) {
+    tableBadge.textContent = 'Table ' + tableNo;
+    tableBadge.style.display = 'inline-block';
+  }
+
+  // Cart system
+  let cart = JSON.parse(localStorage.getItem('mbdCart') || '[]');
+  const cartBtn = document.getElementById('cartBtn');
+  const cartOverlay = document.getElementById('cartOverlay');
+  const cartClose = document.getElementById('cartClose');
+  const cartItems = document.getElementById('cartItems');
+  const cartCount = document.getElementById('cartCount');
+  const cartSubtotal = document.getElementById('cartSubtotal');
+  const cartTotal = document.getElementById('cartTotal');
+  const placeOrderBtn = document.getElementById('placeOrderBtn');
+
+  function saveCart() { localStorage.setItem('mbdCart', JSON.stringify(cart)); }
+
+  function updateCart() {
+    cartCount.textContent = cart.reduce((s, i) => s + i.qty, 0);
+    const subtotal = cart.reduce((s, i) => s + i.qty * i.price, 0);
+    cartSubtotal.textContent = 'Rs. ' + subtotal;
+    cartTotal.textContent = 'Rs. ' + subtotal;
+    placeOrderBtn.disabled = cart.length === 0;
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = '<p class="cart-empty">Your cart is empty.<br>Add items from the menu.</p>';
+      return;
+    }
+    cartItems.innerHTML = cart.map((item, i) => `
+      <div class="cart-item">
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-price">Rs. ${item.price} each</div>
+        </div>
+        <div class="cart-item-qty">
+          <button class="cart-qty-btn" data-index="${i}" data-action="dec">−</button>
+          <span class="cart-qty-num">${item.qty}</span>
+          <button class="cart-qty-btn" data-index="${i}" data-action="inc">+</button>
+        </div>
+        <div class="cart-item-total">Rs. ${item.qty * item.price}</div>
+      </div>
+    `).join('');
+
+    // Update add buttons
+    document.querySelectorAll('.add-btn').forEach(btn => {
+      const parent = btn.closest('.menu-item');
+      const name = parent.dataset.name;
+      const inCart = cart.some(i => i.name === name);
+      btn.classList.toggle('added', inCart);
+      btn.textContent = inCart ? '✓ In Cart' : '+ Add';
+    });
+  }
+
+  document.querySelectorAll('.add-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.menu-item');
+      const name = parent.dataset.name;
+      const price = parseInt(parent.dataset.price);
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      saveCart();
+      updateCart();
+    });
+  });
+
+  cartItems.addEventListener('click', (e) => {
+    const btn = e.target.closest('.cart-qty-btn');
+    if (!btn) return;
+    const idx = parseInt(btn.dataset.index);
+    if (btn.dataset.action === 'inc') {
+      cart[idx].qty++;
+    } else {
+      cart[idx].qty--;
+      if (cart[idx].qty <= 0) cart.splice(idx, 1);
+    }
+    saveCart();
+    updateCart();
+  });
+
+  cartBtn.addEventListener('click', () => {
+    cartOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  function closeCart() {
+    cartOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  cartClose.addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', (e) => { if (e.target === cartOverlay) closeCart(); });
+
+  placeOrderBtn.addEventListener('click', () => {
+    if (cart.length === 0) return;
+    let msg = 'Hello! I\'d like to order:%0A';
+    if (tableNo) msg += '%0ATable: ' + tableNo + '%0A';
+    msg += '%0A--- Items ---%0A';
+    cart.forEach(i => { msg += `${i.name} x${i.qty} = Rs. ${i.qty * i.price}%0A`; });
+    const total = cart.reduce((s, i) => s + i.qty * i.price, 0);
+    msg += `%0ATotal: Rs. ${total}%0A`;
+    msg += '%0APlease confirm my order. Thank you!';
+    window.open('https://wa.me/917088411468?text=' + msg, '_blank');
+  });
+
+  updateCart();
 });
