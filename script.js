@@ -11,16 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  const navLinks = document.querySelector('.nav-links');
-  if (navLinks) {
+  const navLinksTrack = document.querySelector('.nav-links');
+  if (navLinksTrack) {
     const sections = document.querySelectorAll('section[id]');
-    const links = navLinks.querySelectorAll('a[href^="#"]');
+    const links = navLinksTrack.querySelectorAll('a[href^="#"]');
     if (sections.length && links.length) {
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             links.forEach(l => l.classList.remove('active'));
-            const match = navLinks.querySelector(`a[href="#${entry.target.id}"]`);
+            const match = navLinksTrack.querySelector(`a[href="#${entry.target.id}"]`);
             if (match) match.classList.add('active');
           }
         });

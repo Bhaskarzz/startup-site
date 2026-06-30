@@ -194,6 +194,20 @@ h1, h2, h3, .font-display { font-family: var(--font-display); }
   .glass::before { display: none; }
 }
 
+/* Lighter glass on touch / small screens — backdrop-filter blur is one of the
+   most GPU-expensive CSS properties, so we cut it down for phones (especially
+   lower-end ones) while keeping the same translucent material look. */
+@media (max-width: 640px), (hover: none) and (pointer: coarse) {
+  .glass {
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+  }
+  .nav.scrolled {
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+  }
+}
+
 /* ====== NAV ====== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
