@@ -44,10 +44,12 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+html{-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;transition:background var(--t),color var(--t);overflow-x:hidden}
-a{color:inherit;text-decoration:none}ul{list-style:none}button{font-family:var(--font);cursor:pointer;border:none;background:none}
+a{color:inherit;text-decoration:none}ul{list-style:none}button{font-family:var(--font);cursor:pointer;border:none;background:none;touch-action:manipulation}
+input,select,textarea{font-family:var(--font);touch-action:manipulation;font-size:16px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+::selection{background:color-mix(in srgb,var(--accent)30%,transparent);color:var(--text)}
 h1,h2,h3,.font-display{font-family:var(--font-display)}
 img{max-width:100%;height:auto;display:block}
 
@@ -331,8 +333,20 @@ img{max-width:100%;height:auto;display:block}
   .facilities-grid,.gallery-grid{grid-template-columns:repeat(2,1fr)}
   .about-motto{grid-template-columns:1fr}
 }
+/* Mobile improvements - touch targets, spacing, scroll */
+@media(max-width:768px){
+  .topbar-hide,.topbar-item.topbar-action{display:none}
+  .nav-links a{padding:12px 16px;font-size:14px}
+  .nav-actions .btn-sm{padding:12px 20px;font-size:13px}
+  .notification-bell,.theme-toggle{width:48px;height:48px}
+  .notification-center{width:calc(100% - 32px);right:16px;left:16px;top:calc(var(--nav-h) + 37px);max-height:60vh}
+  .notification-center[aria-hidden="false"]{position:fixed;top:auto;bottom:0;left:0;right:0;width:100%;max-height:70vh;border-radius:var(--r-lg) var(--r-lg) 0 0;z-index:300}
+  .exam-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -12px;padding:0 12px}
+  .exam-table-wrap::after{content:'';display:block;width:8px;flex-shrink:0}
+  .fee-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
 @media(max-width:640px){
-  .nav-links{display:none;position:absolute;top:var(--nav-h);left:12px;right:12px;flex-direction:column;background:var(--nav-scrolled);backdrop-filter:blur(24px);padding:10px;gap:4px;border:1px solid var(--border);border-radius:var(--r-md);margin-top:8px}
+  .nav-links{display:none;position:absolute;top:calc(var(--nav-h) + 8px);left:12px;right:12px;flex-direction:column;background:var(--glass-bg-strong);backdrop-filter:blur(24px);padding:8px;gap:2px;border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--glass-shadow-hover)}
   .nav-links.open{display:flex}
   .mobile-btn{display:flex}
   .about-grid,.about-features,.programs-grid,.admissions-grid,.facilities-grid,.gallery-grid{grid-template-columns:1fr}
@@ -342,24 +356,77 @@ img{max-width:100%;height:auto;display:block}
   .cta-card{padding:36px 24px}
   .section{padding:64px 16px}
   .about-motto{grid-template-columns:1fr}
-  .facility-img{height:180px}
-  .gallery-item{height:200px}
+  .facility-img{height:200px}
+  .gallery-item{height:auto}
+  .school-hero{padding:140px 16px 60px;min-height:auto}
+  .hero-title{font-size:clamp(28px,8vw,36px)}
+  .hero-subtitle{font-size:14px}
+  .hero-actions{flex-direction:column;align-items:center}
+  .hero-actions .btn{width:100%;max-width:280px}
+  .page-hero{padding:120px 16px 48px;min-height:200px}
+  .page-hero-title{font-size:clamp(24px,7vw,32px)}
+  .page-hero-sub{font-size:14px}
+  .admission-form{padding:24px 18px}
+  .results-auth{padding:28px 20px}
+  .results-header{flex-direction:column;align-items:flex-start;padding:16px 18px}
+  .results-card{padding:16px 18px}
+  .exam-card{padding:16px 18px}
+  .exam-table{font-size:11px;min-width:500px}
+  .exam-table th,.exam-table td{padding:8px 8px;white-space:nowrap}
+  .fee-table{font-size:12px;min-width:500px}
+  .fee-table th,.fee-table td{padding:10px 12px;white-space:nowrap}
+  .about-features,.programs-grid,.admissions-grid{display:grid;grid-template-columns:1fr}
+  .map-container iframe{height:280px}
+  .gallery-filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .gallery-filters::-webkit-scrollbar{display:none}
+  .gallery-filter{flex-shrink:0;font-size:12px;padding:10px 16px}
+  .lightbox-content img{max-height:50vh}
+  .lightbox-nav{width:40px;height:40px;font-size:22px}
+  .lightbox-prev{left:8px}
+  .lightbox-next{right:8px}
 }
-@media(max-width:360px){
-  .school-hero{padding:130px 16px 60px}
-  .hero-title{font-size:28px}
-  .hero-stats{gap:10px}
+@media(max-width:480px){
   .section{padding:48px 12px}
-  .section-header{margin-bottom:32px}
+  .section-header{margin-bottom:28px}
+  .section-title{font-size:22px}
+  .section-desc{font-size:14px}
+  .hero-title{font-size:26px}
   .cta-card{padding:28px 16px;border-radius:var(--r-lg)}
-  .cta-card h2{font-size:22px}
-  .gallery-item{height:160px}
-  .facility-img{height:160px}
+  .cta-card h2{font-size:20px}
+  .cta-card p{font-size:13px}
   .about-feat{padding:20px 16px}
   .program-card{padding:20px 16px}
   .admission-step{padding:18px 14px}
-  .fee-table{font-size:12px}
-  .fee-table th,.fee-table td{padding:10px 12px}
   .footer{padding:40px 16px 24px}
   .footer-grid{gap:24px}
+  .topbar-inner{gap:12px;padding:0 12px;font-size:11px}
+  .notification-item{padding:14px 12px}
+  .notification-item-icon{width:32px;height:32px;font-size:14px}
+  .gallery-item{height:auto}
+  .gallery-item.tall .gallery-item-img,.gallery-item.wide .gallery-item-img,.gallery-item.featured .gallery-item-img{aspect-ratio:4/3!important}
+  .exams-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .exams-tabs::-webkit-scrollbar{display:none}
+  .exams-tab{flex-shrink:0;font-size:12px;padding:10px 16px}
+  .results-dashboard .results-total{padding:14px 18px;flex-direction:column;gap:4px;text-align:center}
+  .results-logout a{padding:12px 0;display:block}
+}
+@media(max-width:360px){
+  .school-hero{padding:120px 12px 48px}
+  .hero-title{font-size:24px}
+  .section{padding:40px 10px}
+  .section-desc{font-size:13px}
+  .cta-card{padding:24px 14px}
+  .cta-card h2{font-size:18px}
+  .gallery-item{height:auto}
+  .about-feat{padding:18px 14px}
+  .program-card{padding:18px 14px}
+  .admission-step{padding:16px 12px}
+  .fee-table th,.fee-table td{padding:8px 10px;font-size:11px}
+  .exam-table{font-size:10px;min-width:450px}
+  .exam-table th,.exam-table td{padding:6px 6px}
+  .footer{padding:32px 12px 20px}
+  .footer-grid{gap:16px}
+  .map-info{padding:0 8px}
+  .map-container iframe{height:220px}
+  .results-auth{padding:22px 16px}
 }
